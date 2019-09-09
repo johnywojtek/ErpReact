@@ -1,0 +1,31 @@
+/* ###### 3.12 Popover ###### */
+
+.popover {
+    font-size: 14px;
+    padding: 8px 12px;
+    color: #fff;
+    // letter-spacing: 0.5px;
+
+    background-color: rgba(0, 0, 0, .90);
+
+    &::before {
+        display: none !important;
+    }
+
+    .popover-body {
+        padding: 0;
+        color: #fff
+    }
+
+    .arrow {
+        border-right-color: rgba(0, 0, 0, .90) !important;
+
+
+
+        &::after {
+
+            border-top-color: rgba(0, 0, 0, .90);
+
+        }
+    }
+}

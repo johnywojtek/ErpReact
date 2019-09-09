@@ -1,0 +1,48 @@
+/* ###### 6.3 Global  ###### */
+
+.az-body,
+.az-dashboard {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+        width: 84vw;
+    }
+}
+
+.az-table-reference {
+    margin-top: 40px;
+    background-color: #fff;
+
+    > thead > tr,
+    > tbody > tr {
+        > th,
+        > td {
+            padding: 8px 10px;
+            border: 1px solid $gray-300;
+            font-size: 13px;
+        }
+    }
+
+    > thead > tr {
+        > th,
+        > td {
+            background-color: $gray-100;
+            color: $gray-600;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 0;
+        }
+    }
+}

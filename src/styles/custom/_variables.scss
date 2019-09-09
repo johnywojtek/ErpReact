@@ -1,0 +1,25 @@
+$az-height-base: 38px;
+
+$az-height-header: 9vh;
+$az-height-header-mobile: 9vh;
+$az-height-navbar: 48px;
+$az-height-navbar-compact: 42px;
+$az-height-footer: 40px;
+$az-height-content: calc(100vh - #{20 + $az-height-navbar});
+
+$az-width-sidebar: 270px;
+$az-width-iconbar-aside: 230px;
+
+$az-border-color: rgba($gray-900, 0.2);
+
+$ckbox-size: 16px;
+$rdiobox-size: 16px;
+
+$az-color-primary: #3251cd;
+$az-color-secondary: $blue;
+
+$font-size-sm: 13px;
+$font-size-md: $font-size-base+0.0625;
+$font-weight: 500;
+
+$input-btn-focus-color: rgba($az-color-primary, 0.25);

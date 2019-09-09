@@ -1,0 +1,81 @@
+/* ############### FONTS IMPORT ############### */
+// @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+// @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+// @import url('https://fonts.googleapis.com/css?family=Archivo:400,500,600,700');
+
+// Bootstrap variable overrides
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+/* ############### BOOTSTRAP FRAMEWORK ############### */
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Custom variables and mixins
+@import 'custom/variables';
+@import 'custom/mixins';
+
+/* ########## BOOTSTRAP OVERRIDES ########## */
+
+@import 'bootstrap/accordion';
+@import 'bootstrap/alerts';
+@import 'bootstrap/buttons';
+@import 'bootstrap/cards';
+@import 'bootstrap/dropdown';
+@import 'bootstrap/forms';
+@import 'bootstrap/grid';
+@import 'bootstrap/input-group';
+@import 'bootstrap/modal';
+@import 'bootstrap/nav';
+@import 'bootstrap/pagination';
+@import 'bootstrap/popover';
+@import 'bootstrap/progress';
+@import 'bootstrap/table';
+@import 'bootstrap/tooltip';
+
+/* ############### CUSTOM VENDOR STYLES ############### */
+
+// datepicker react znalesc
+
+//scrollbar css
+@import 'lib/scrollbar';
+//select css
+@import 'lib/select2';
+//color picker css
+@import 'lib/spectrum';
+
+/* ############### CUSTOM ELEMENT STYLES ############### */
+
+@import 'custom/buttons';
+@import 'custom/charts';
+@import 'custom/forms';
+@import 'custom/image';
+@import 'custom/list';
+@import 'custom/modal';
+@import 'custom/nav';
+
+/* ############### PAGE LAYOUT STYLES ############### */
+
+@import 'layout/content';
+@import 'layout/global';
+@import 'layout/header';
+@import 'layout/sidebar';
+
+/* ############### TEMPLATE STYLES ############### */
+
+@import 'template/calendar';
+@import 'template/chat';
+@import 'template/participants';
+@import 'template/email';
+@import 'template/profile';
+@import 'template/signin';
+@import 'template/signup';
+@import 'template/roles';
+@import 'template/notification';
+@import 'template/acc-settings';
+@import 'template/acc-edit';
+@import 'template/small-chat';
+
+/* ############### DASHBOARD STYLES ############### */
+
+@import 'template/main-page';

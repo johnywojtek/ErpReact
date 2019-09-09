@@ -1,0 +1,139 @@
+/* ###### 6.1 Content  ###### */
+
+// .az-content-left-show {
+//     @media (max-width: 575px) {
+//         overflow: hidden;
+//     }
+
+//     .az-content-left {
+//         @include media-breakpoint-down(md) {
+//             display: block;
+//             position: fixed;
+//             top: 0;
+//             bottom: 0;
+//             left: 0;
+//             background-color: #fff;
+//             z-index: 800;
+//             border-right: 1px solid $gray-400;
+//             box-shadow: 0 0 3px rgba($gray-900, 0.1);
+//             overflow-y: auto;
+//         }
+//     }
+
+//     .az-content-body {
+//         @media (max-width: 575px) {
+//             display: none;
+//         }
+//     }
+// }
+
+// .az-content-body-show {
+//     @include media-breakpoint-down(md) {
+//         .az-header {
+//             .az-header-menu-icon {
+//                 display: none;
+//             }
+
+//             .az-header-left .az-header-arrow {
+//                 display: block;
+//             }
+//         }
+
+//         .az-content-left {
+//             display: none;
+//         }
+
+//         .az-content-body {
+//             display: block;
+//         }
+//     }
+// }
+.content-padding {
+    padding: 20px 0 0 20px;
+}
+.az-content-left {
+    width: 100%;
+    position: relative;
+    padding: 0 20px 20px;
+    flex-shrink: 0;
+    display: none;
+
+    @include media-breakpoint-up(sm) {
+        width: 280px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+        padding: 0;
+    }
+}
+
+.az-content-header {
+    height: $az-height-header-mobile;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+
+    .az-header-menu-icon {
+        margin-right: 0;
+    }
+
+    .az-logo {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+.az-content-body {
+    flex: 1;
+    background-color: #fff;
+    border-top: 1px solid #ced4da;
+    display: flex;
+    @include media-breakpoint-up(lg) {
+        height: 91vh;
+    }
+}
+
+.az-content-title {
+    color: $gray-900;
+    font-weight: 700;
+    font-size: 24px;
+    text-indent: -1px;
+    line-height: 1;
+    position: relative;
+    margin-bottom: 20px;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 40px;
+    }
+}
+
+.az-content-label {
+    color: $gray-900;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.az-content-label-sm {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: $font-family-roboto;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $gray-600;
+}
+
+.az-content-text {
+    font-size: 12px;
+    line-height: 1.4;
+    display: block;
+    color: $gray-600;
+}

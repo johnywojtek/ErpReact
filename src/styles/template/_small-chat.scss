@@ -1,0 +1,218 @@
+.small-chat {
+    position: absolute;
+    bottom: 0;
+    right: 24vw;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    font-family: $font-family-base;
+    background-color: #fcfcfc;
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+    .az-img-user {
+        display: block;
+        width: 28px;
+        height: 28px;
+        @include border-radius(100%);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include border-radius(100%);
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .small-chat-header {
+        height: 43px;
+        display: flex;
+        align-items: center;
+        padding: 8px 4px 7px 8px;
+        border-bottom: 1px solid $gray-400;
+
+        .nav {
+            margin-left: auto;
+        }
+
+        .nav-link {
+            color: $gray-400;
+            padding: 0 4px;
+            &:first-child {
+                svg {
+                    width: 18px;
+                    height: 15px;
+                }
+            }
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            @include hover-focus() {
+                color: $az-color-primary;
+            }
+        }
+    }
+
+    .chat-msg-name {
+        margin-left: 15px;
+
+        h6 {
+            margin-bottom: 0px;
+            font-size: 13px;
+            font-weight: 600;
+            color: $gray-800;
+        }
+    }
+    .small-chat-footer {
+        display: flex;
+        align-items: center;
+        height: 15%;
+        padding: 0 12px;
+        border-top: 1px solid $gray-400;
+
+        .nav {
+            align-items: center;
+        }
+
+        .nav-link {
+            padding: 0;
+            color: $gray-500;
+            font-size: 16px;
+            cursor: pointer;
+
+            + .nav-link {
+                margin-left: 10px;
+            }
+            @include hover-focus() {
+                color: $az-color-primary;
+            }
+        }
+
+        .form-control {
+            flex: 1;
+            margin: 0 10px;
+            padding-left: 0;
+            padding-right: 0;
+            border-width: 0;
+
+            @include hover-focus() {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.small-chat-body {
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 0;
+        height: 39vh;
+        width: 21vw;
+        overflow: hidden;
+    }
+
+    .content-inner {
+        // height: 200px;
+        padding: 10px;
+    }
+
+    .media {
+        + .media {
+            margin-top: 20px;
+        }
+
+        &.flex-row-reverse {
+            .media-body {
+                margin-left: 0;
+                margin-right: 10px;
+                align-items: flex-end;
+
+                @include media-breakpoint-up(sm) {
+                    margin-left: 25px;
+                }
+            }
+
+            .az-msg-wrapper {
+                background-color: $az-color-primary;
+                color: #fff;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .media-body {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include media-breakpoint-up(sm) {
+            margin-right: 10px;
+        }
+
+        > div:last-child {
+            font-size: 11px;
+            color: $gray-600;
+        }
+    }
+
+    .az-chat-time {
+        display: block;
+        position: relative;
+        text-align: center;
+        margin: 20px 0;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        span {
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+    .az-chat-time {
+        display: block;
+        position: relative;
+        text-align: center;
+        margin: 20px 0;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        span {
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+
+    .az-msg-wrapper {
+        padding: 10px 15px;
+        background-color: $gray-300;
+        font-size: $font-size-sm;
+        margin-bottom: 5px;
+        @include border-radius(2px);
+        display: inline-block;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .az-msg-send {
+        font-size: 18px;
+        color: $az-color-primary;
+    }
+}

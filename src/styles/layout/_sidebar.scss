@@ -1,0 +1,219 @@
+/* ###### 6.8 Sidebar  ###### */
+
+.az-sidebar {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    border-right: 1px solid $gray-400;
+    flex-shrink: 0;
+
+    @include media-breakpoint-down(md) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 10000;
+        background-color: #fff;
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        width: 18vw;
+    }
+}
+
+.az-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 15px;
+    margin-top: 20px;
+    .sidebar-close {
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        justify-content: center;
+
+        .logo {
+            width: 180px;
+        }
+    }
+
+    .logo {
+        width: 180px;
+        flex-shrink: 1;
+    }
+}
+
+.az-sidebar-body {
+    padding: 20px;
+
+    @include media-breakpoint-up(xl) {
+        padding: 20px;
+    }
+
+    .nav {
+        flex-direction: column;
+    }
+
+    .nav-label {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        color: $gray-600;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted $gray-400;
+
+        svg {
+            height: 12px;
+            fill: $gray-600;
+            cursor: pointer;
+        }
+    }
+
+    #typcn {
+        height: 24px;
+        width: 23px;
+        margin-bottom: 3px;
+
+        margin-right: 8px;
+
+        &::before {
+            width: auto;
+        }
+    }
+
+    #nav-down-icon {
+        font-size: 10px;
+        margin-left: auto;
+    }
+
+    .nav-sub-link {
+        height: $az-height-base - 4px;
+        display: flex;
+        align-items: center;
+
+        color: $body-color;
+        font-size: 13px;
+
+        @include hover-focus() {
+            color: $az-color-primary;
+        }
+
+        &.active {
+            color: $az-color-primary;
+        }
+    }
+}
+
+.az-sidebar-show {
+    @include media-breakpoint-down(md) {
+        overflow: hidden;
+
+        .az-sidebar {
+            display: flex;
+            overflow-y: auto;
+            border-right-width: 0;
+        }
+
+        .az-content {
+            transform: translateX($az-width-sidebar);
+        }
+
+        .az-navbar-backdrop {
+            @include media-breakpoint-down(md) {
+                display: block;
+                left: $az-width-sidebar;
+            }
+        }
+    }
+}
+
+.az-sidebar-hide {
+    @include media-breakpoint-up(lg) {
+        .az-sidebar {
+            display: none;
+        }
+
+        .az-sidebar-sticky + .az-content {
+            margin-left: 0;
+        }
+    }
+}
+
+.rc-collapse {
+    outline: none;
+
+    :focus {
+        outline: none;
+    }
+}
+
+.rc-collapse-anim-active {
+    transition: height 0.2s ease-out;
+}
+
+.rc-collapse > .rc-collapse-item:first-child {
+    .rc-collapse-header {
+        &::before {
+            border-top: none;
+        }
+    }
+}
+
+.rc-collapse > .rc-collapse-item > .rc-collapse-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+
+    height: $az-height-base + 3px;
+    padding: 0;
+    padding-top: 2px;
+    color: $gray-900;
+    position: relative;
+
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 30px;
+        right: 0;
+        border-top: 1px dotted $gray-400;
+    }
+
+    &.nav-second {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.rc-collapse-content {
+    overflow: hidden;
+}
+
+.rc-collapse-content > .rc-collapse-content-box {
+    padding-left: 21px;
+    margin-left: 10px;
+    border-left: 2px solid #e9ecef;
+}
+
+.rc-collapse-content-inactive {
+    display: none;
+}
+
+.rc-collapse-item:last-child > .rc-collapse-content {
+    border-radius: 0 0 3px 3px;
+}

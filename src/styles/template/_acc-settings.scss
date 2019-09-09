@@ -1,0 +1,86 @@
+.edit-profile {
+    // width: 70vw;
+    // margin: 10px auto;
+    margin: 20px 50px;
+    width: 50vw;
+
+    >div {
+        border: 1px solid $gray-400;
+        border-radius: 8px;
+        padding: 20px 40px;
+        margin-bottom: 20px;
+    }
+
+    &__btn {
+        font-size: 16px;
+        cursor: pointer;
+        color: black;
+
+        i {
+            margin-right: 5px;
+        }
+
+        &:hover {
+            border-bottom: 1px solid $az-color-primary;
+            color: $az-color-primary;
+        }
+
+    }
+
+    &__label-main {
+        font-size: 21px
+    }
+
+    &__label {
+        font-size: 16px;
+        font-weight: 500;
+
+    }
+
+    p {
+        font-size: 16px;
+
+    }
+
+    .edit-profile-description {
+        width: 70%;
+    }
+}
+
+
+
+
+
+.edit__photo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+    img {
+        width: 130px;
+        height: 130px;
+        border-radius: 100%;
+
+    }
+
+    h2 {
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+}
+
+.edit__personal {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit__account {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
