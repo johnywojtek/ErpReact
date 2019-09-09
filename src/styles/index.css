@@ -8763,7 +8763,10 @@ a.text-dark:hover, a.text-dark:focus {
 /* ############### PAGE LAYOUT STYLES ############### */
 /* ###### 6.1 Content  ###### */
 .content-padding {
-  padding: 20px 0 0 20px; }
+  padding: 20px; }
+  @media (min-width: 992px) {
+    .content-padding {
+      padding: 20px 0 0 20px; } }
 
 .az-content-left {
   width: 100%;
@@ -8778,21 +8781,6 @@ a.text-dark:hover, a.text-dark:focus {
     .az-content-left {
       display: block;
       padding: 0; } }
-
-.az-content-header {
-  height: 9vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px; }
-  @media (min-width: 992px) {
-    .az-content-header {
-      display: none; } }
-  .az-content-header .az-header-menu-icon {
-    margin-right: 0; }
-  .az-content-header .az-logo {
-    flex: 1;
-    text-align: center; }
 
 .az-content-body {
   flex: 1;
@@ -9292,13 +9280,6 @@ a.text-dark:hover, a.text-dark:focus {
       height: 12px;
       fill: #70737c;
       cursor: pointer; }
-  .az-sidebar-body #typcn {
-    height: 24px;
-    width: 23px;
-    margin-bottom: 3px;
-    margin-right: 8px; }
-    .az-sidebar-body #typcn::before {
-      width: auto; }
   .az-sidebar-body #nav-down-icon {
     font-size: 10px;
     margin-left: auto; }
@@ -9366,6 +9347,13 @@ a.text-dark:hover, a.text-dark:focus {
     border-top: 1px dotted #ced4da; }
   .rc-collapse > .rc-collapse-item > .rc-collapse-header.nav-second::before {
     display: none; }
+  .rc-collapse > .rc-collapse-item > .rc-collapse-header svg {
+    font-size: 24px;
+    height: 20px;
+    margin-bottom: 3px;
+    margin-right: 8px; }
+    .rc-collapse > .rc-collapse-item > .rc-collapse-header svg::before {
+      width: auto; }
 
 .rc-collapse-content {
   overflow: hidden; }
@@ -10627,48 +10615,40 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 10px 0 0 20px; }
 
 .az-content-body-mail {
-  position: relative; }
+  padding-bottom: 0;
+  flex: 1;
+  overflow: hidden; }
+
+.az-content-left-mail {
+  width: 100vw;
+  display: block;
+  padding: 0;
+  padding-bottom: 0;
+  height: 88vh;
+  overflow: hidden; }
   @media (min-width: 992px) {
-    .az-content-body-mail {
-      padding-bottom: 0;
-      padding-right: 10px;
-      height: calc(100vh - 85px);
-      overflow: hidden; } }
-
-@media (min-width: 576px) {
-  .az-content-left-mail {
-    width: 300px; } }
-
-@media (min-width: 992px) {
-  .az-content-left-mail {
-    width: 220px;
-    display: block;
-    padding: 0;
-    border-right: 1px solid #ced4da;
-    padding-bottom: 0;
-    height: calc(100vh - 85px);
-    overflow: hidden; } }
-
-.az-content-left-mail .btn-compose {
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 11px;
-  padding: 0 20px;
-  letter-spacing: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 38px; }
-  @media (min-width: 992px) {
-    .az-content-left-mail .btn-compose {
-      margin-right: 25px; } }
-
-.az-content-left-mail .modal-dialog {
-  max-width: 80vw; }
-  @media (min-width: 576px) {
-    .az-content-left-mail .modal-dialog {
-      max-width: 20vw; } }
+    .az-content-left-mail {
+      width: 220px;
+      border-right: 1px solid #ced4da; } }
+  .az-content-left-mail .btn-compose {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 11px;
+    padding: 0 20px;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px; }
+    @media (min-width: 992px) {
+      .az-content-left-mail .btn-compose {
+        margin-right: 25px; } }
+  .az-content-left-mail .modal-dialog {
+    max-width: 80vw; }
+    @media (min-width: 576px) {
+      .az-content-left-mail .modal-dialog {
+        max-width: 20vw; } }
 
 .form-group button {
   margin-top: 10px; }
@@ -10678,20 +10658,21 @@ a.text-dark:hover, a.text-dark:focus {
 
 .az-mail-menu {
   position: relative;
-  padding-right: 0; }
+  padding-right: 0;
+  height: 100%; }
   @media (min-width: 992px) {
     .az-mail-menu {
-      padding-right: 15px; } }
+      margin-right: 15px; } }
   .az-mail-menu .nav-link {
     height: 38px; }
     @media (min-width: 992px) {
       .az-mail-menu .nav-link {
         font-size: 13px; } }
-    .az-mail-menu .nav-link i {
+    .az-mail-menu .nav-link svg {
       font-size: 22px; }
   .az-mail-menu .az-nav-column {
     margin-bottom: 10px; }
-    .az-mail-menu .az-nav-column i {
+    .az-mail-menu .az-nav-column svg {
       margin-right: 7px; }
     .az-mail-menu .az-nav-column .add-mail {
       font-size: 12px;
@@ -10708,7 +10689,6 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 0 20px; }
   @media (min-width: 992px) {
     .az-mail-header {
-      padding: 0 0 0 25px;
       margin-bottom: 25px; } }
   .az-mail-header > div:first-child p {
     font-size: 13px;
@@ -10735,6 +10715,9 @@ a.text-dark:hover, a.text-dark:focus {
     z-index: 1;
     border-color: #ced4da;
     background-color: #fff; }
+    .az-mail-header .btn-group .btn svg, .az-mail-header .btn-group .sp-container button svg, .sp-container .az-mail-header .btn-group button svg {
+      width: 20px;
+      height: 20px; }
     .az-mail-header .btn-group .btn:hover, .az-mail-header .btn-group .sp-container button:hover, .sp-container .az-mail-header .btn-group button:hover, .az-mail-header .btn-group .btn:focus, .az-mail-header .btn-group .sp-container button:focus, .sp-container .az-mail-header .btn-group button:focus {
       color: #212229;
       background-color: #f8f9fa; }
@@ -10766,15 +10749,13 @@ a.text-dark:hover, a.text-dark:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
     background-color: transparent; }
     .az-mail-options .btn:hover, .az-mail-options .sp-container button:hover, .sp-container .az-mail-options button:hover, .az-mail-options .btn:focus, .az-mail-options .sp-container button:focus, .sp-container .az-mail-options button:focus {
       background-color: #e9ecef; }
     .az-mail-options .btn i, .az-mail-options .sp-container button i, .sp-container .az-mail-options button i {
       line-height: 0; }
       .az-mail-options .btn i.typcn, .az-mail-options .sp-container button i.typcn, .sp-container .az-mail-options button i.typcn {
-        line-height: .75; }
+        line-height: 0.75; }
     .az-mail-options .btn.disabled, .az-mail-options .sp-container button.disabled, .sp-container .az-mail-options button.disabled {
       background-color: transparent;
       color: #70737c; }
@@ -10829,7 +10810,7 @@ a.text-dark:hover, a.text-dark:focus {
 .az-mail-star {
   margin-right: 15px;
   font-size: 18px;
-  line-height: .9;
+  line-height: 0.9;
   color: #ced4da;
   position: absolute;
   bottom: 10px;
@@ -10875,7 +10856,6 @@ a.text-dark:hover, a.text-dark:focus {
   width: 100%; }
   @media (min-width: 576px) {
     .az-mail-subject strong {
-      display: inline;
       width: auto;
       white-space: normal;
       text-overflow: inherit;
@@ -10892,7 +10872,7 @@ a.text-dark:hover, a.text-dark:focus {
 .az-mail-attachment {
   margin-right: 15px;
   font-size: 21px;
-  line-height: .9;
+  line-height: 0.9;
   display: none; }
   @media (min-width: 992px) {
     .az-mail-attachment {

@@ -49,7 +49,11 @@
 //     }
 // }
 .content-padding {
-    padding: 20px 0 0 20px;
+    padding: 20px;
+
+    @include media-breakpoint-up(lg) {
+        padding: 20px 0 0 20px;
+    }
 }
 .az-content-left {
     width: 100%;
@@ -65,27 +69,6 @@
     @include media-breakpoint-up(lg) {
         display: block;
         padding: 0;
-    }
-}
-
-.az-content-header {
-    height: $az-height-header-mobile;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-
-    @include media-breakpoint-up(lg) {
-        display: none;
-    }
-
-    .az-header-menu-icon {
-        margin-right: 0;
-    }
-
-    .az-logo {
-        flex: 1;
-        text-align: center;
     }
 }
 

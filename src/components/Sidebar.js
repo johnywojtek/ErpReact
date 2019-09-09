@@ -10,6 +10,7 @@ import { NavLink } from 'react-router-dom';
 import Collapse, { Panel } from '../es';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { IoIosClose } from 'react-icons/io';
+import { FaRegFlag } from 'react-icons/fa';
 
 import {
     TiClipboard,
@@ -86,7 +87,7 @@ class Sidebar extends React.Component {
                             >
                                 <Panel
                                     header="Board"
-                                    headerIcon={<TiHomeOutline id="typcn" />}
+                                    headerIcon={<TiHomeOutline class="typcn" />}
                                 >
                                     <nav>
                                         <NavLink
@@ -108,7 +109,9 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="Tools"
-                                    headerIcon={<TiThLargeOutline id="typcn" />}
+                                    headerIcon={
+                                        <TiThLargeOutline class="typcn" />
+                                    }
                                 >
                                     <nav>
                                         <NavLink
@@ -190,7 +193,7 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="Management"
-                                    headerIcon={<TiClipboard id="typcn" />}
+                                    headerIcon={<TiClipboard class="typcn" />}
                                 >
                                     <nav>
                                         <NavLink to="" className="nav-sub-link">
@@ -248,7 +251,7 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="Basics"
-                                    headerIcon={<TiPuzzleOutline id="typcn" />}
+                                    headerIcon={<FaRegFlag class="typcn" />}
                                 >
                                     <nav>
                                         <NavLink to="" className="nav-sub-link">
@@ -292,7 +295,9 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="Major Events"
-                                    headerIcon={<TiPuzzleOutline id="typcn" />}
+                                    headerIcon={
+                                        <TiPuzzleOutline class="typcn" />
+                                    }
                                 >
                                     <nav>
                                         <NavLink to="" className="nav-sub-link">
@@ -312,7 +317,9 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="NeuroN Foundation"
-                                    headerIcon={<TiPuzzleOutline id="typcn" />}
+                                    headerIcon={
+                                        <TiPuzzleOutline class="typcn" />
+                                    }
                                 >
                                     <nav>
                                         <Collapse defaultActiveKey="1">
@@ -514,7 +521,9 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="New Neuropsychiatry"
-                                    headerIcon={<TiPuzzleOutline id="typcn" />}
+                                    headerIcon={
+                                        <TiPuzzleOutline class="typcn" />
+                                    }
                                 >
                                     <nav>
                                         <NavLink to="" className="nav-sub-link">
@@ -537,7 +546,9 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="NeuroN Direction"
-                                    headerIcon={<TiPuzzleOutline id="typcn" />}
+                                    headerIcon={
+                                        <TiPuzzleOutline class="typcn" />
+                                    }
                                 >
                                     <nav>
                                         <Collapse defaultActiveKey="1">
@@ -583,7 +594,9 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="Oakes Innovate"
-                                    headerIcon={<TiPuzzleOutline id="typcn" />}
+                                    headerIcon={
+                                        <TiPuzzleOutline class="typcn" />
+                                    }
                                 >
                                     <nav>
                                         <NavLink to="" className="nav-sub-link">
@@ -597,7 +610,9 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="NTV Channel"
-                                    headerIcon={<TiPuzzleOutline id="typcn" />}
+                                    headerIcon={
+                                        <TiPuzzleOutline class="typcn" />
+                                    }
                                 >
                                     <nav>
                                         <NavLink to="" className="nav-sub-link">
@@ -644,7 +659,9 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="Oakes Clinic"
-                                    headerIcon={<TiPuzzleOutline id="typcn" />}
+                                    headerIcon={
+                                        <TiPuzzleOutline class="typcn" />
+                                    }
                                 >
                                     <nav>
                                         <NavLink to="" className="nav-sub-link">
@@ -664,7 +681,9 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="Oak Atlantis"
-                                    headerIcon={<TiPuzzleOutline id="typcn" />}
+                                    headerIcon={
+                                        <TiPuzzleOutline class="typcn" />
+                                    }
                                 >
                                     <nav>
                                         <NavLink to="" className="nav-sub-link">
@@ -681,7 +700,9 @@ class Sidebar extends React.Component {
 
                                 <Panel
                                     header="NeuroN Currency"
-                                    headerIcon={<TiPuzzleOutline id="typcn" />}
+                                    headerIcon={
+                                        <TiPuzzleOutline class="typcn" />
+                                    }
                                 >
                                     <nav>
                                         <NavLink to="" className="nav-sub-link">

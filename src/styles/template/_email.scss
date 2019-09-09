@@ -1,8 +1,6 @@
 /* ###### 7.6 Mail  ###### */
 
-
 .az-content-mail {
-
     .container,
     .container-fluid {
         padding: 10px 0 0 20px;
@@ -10,34 +8,24 @@
 }
 
 .az-content-body-mail {
-
-    position: relative;
-
-
-    @include media-breakpoint-up(lg) {
-        padding-bottom: 0;
-        padding-right: 10px;
-        height: calc(100vh - 85px);
-        overflow: hidden;
-
-    }
+    padding-bottom: 0;
+    // height: calc(100vh - 85px);
+    flex: 1;
+    overflow: hidden;
 }
 
 .az-content-left-mail {
+    width: 100vw;
+    display: block;
+    padding: 0;
 
-    @include media-breakpoint-up(sm) {
-        width: 300px;
-    }
+    padding-bottom: 0;
+    height: 88vh;
+    overflow: hidden;
 
     @include media-breakpoint-up(lg) {
         width: 220px;
-        display: block;
-        padding: 0;
         border-right: 1px solid $gray-400;
-        padding-bottom: 0;
-        height: calc(100vh - 85px);
-        overflow: hidden;
-
     }
 
     .btn-compose {
@@ -61,16 +49,10 @@
         max-width: 80vw;
 
         @media (min-width: 576px) {
-
             max-width: 20vw;
-
         }
     }
-
 }
-
-
-
 
 .form-group {
     button {
@@ -85,10 +67,10 @@
 .az-mail-menu {
     position: relative;
     padding-right: 0;
+    height: 100%;
 
     @include media-breakpoint-up(lg) {
-        padding-right: 15px;
-
+        margin-right: 15px;
     }
 
     .nav-link {
@@ -98,7 +80,7 @@
             font-size: 13px;
         }
 
-        i {
+        svg {
             font-size: 22px;
         }
     }
@@ -106,7 +88,7 @@
     .az-nav-column {
         margin-bottom: 10px;
 
-        i {
+        svg {
             margin-right: 7px;
         }
 
@@ -116,11 +98,10 @@
 
             i {
                 font-size: 12px;
-                color: $gray-600
+                color: $gray-600;
             }
         }
     }
-
 }
 
 .az-mail-header {
@@ -131,18 +112,18 @@
     padding: 0 20px;
 
     @include media-breakpoint-up(lg) {
-        padding: 0 0 0 25px;
+        // padding: 0 0 0 25px;
         margin-bottom: 25px;
     }
 
-    >div:first-child {
+    > div:first-child {
         p {
             font-size: 13px;
             margin-bottom: 0;
         }
     }
 
-    >div:last-child {
+    > div:last-child {
         display: none;
 
         @include media-breakpoint-up(md) {
@@ -150,7 +131,7 @@
             align-items: center;
         }
 
-        >span {
+        > span {
             font-size: 12px;
             margin-right: 10px;
         }
@@ -170,6 +151,11 @@
         border-color: $gray-400;
         background-color: #fff;
 
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+
         @include hover-focus() {
             color: $gray-900;
             background-color: $gray-100;
@@ -187,7 +173,7 @@
             }
         }
 
-        +.btn {
+        + .btn {
             margin-left: -2px;
         }
     }
@@ -213,8 +199,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 36px;
-        height: 36px;
+
         background-color: transparent;
 
         @include hover-focus() {
@@ -225,7 +210,7 @@
             line-height: 0;
 
             &.typcn {
-                line-height: .75;
+                line-height: 0.75;
             }
         }
 
@@ -241,7 +226,6 @@
 
     @include media-breakpoint-up(lg) {
         border-top-width: 0;
-
     }
 }
 
@@ -264,7 +248,7 @@
         padding: 10px 25px;
     }
 
-    +.az-mail-item {
+    + .az-mail-item {
         margin-top: -1px;
     }
 
@@ -307,7 +291,7 @@
 .az-mail-star {
     margin-right: 15px;
     font-size: 18px;
-    line-height: .9;
+    line-height: 0.9;
     color: $gray-400;
     position: absolute;
     bottom: 10px;
@@ -323,7 +307,6 @@
         color: $yellow;
     }
 }
-
 
 .az-mail-body {
     width: calc(100% - 80px);
@@ -345,7 +328,6 @@
 }
 
 .az-mail-subject {
-
     @include media-breakpoint-up(sm) {
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -364,7 +346,6 @@
         width: 100%;
 
         @include media-breakpoint-up(sm) {
-            display: inline;
             width: auto;
             white-space: normal;
             text-overflow: inherit;
@@ -386,7 +367,7 @@
 .az-mail-attachment {
     margin-right: 15px;
     font-size: 21px;
-    line-height: .9;
+    line-height: 0.9;
     display: none;
 
     @include media-breakpoint-up(lg) {
@@ -414,11 +395,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($gray-900, .5);
+    background-color: rgba($gray-900, 0.5);
     z-index: 1000;
     display: none;
 
-    >div {
+    > div {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -436,7 +417,7 @@
 .az-mail-compose-box {
     width: 50vw;
     margin: 0 auto;
-    box-shadow: 0 0 30px rgba($gray-900, .2);
+    box-shadow: 0 0 30px rgba($gray-900, 0.2);
     @include border-radius();
 }
 
@@ -456,7 +437,7 @@
     }
 
     .nav-link {
-        color: rgba(#fff, .3);
+        color: rgba(#fff, 0.3);
         font-size: 14px;
         line-height: 1;
         padding: 0;
@@ -467,7 +448,7 @@
             color: #fff;
         }
 
-        +.nav-link {
+        + .nav-link {
             margin-left: 15px;
         }
 
@@ -494,7 +475,7 @@
         display: flex;
         align-items: center;
 
-        >div {
+        > div {
             flex: 1;
             margin-left: 10px;
         }
@@ -514,7 +495,7 @@
             }
         }
 
-        +.form-group {
+        + .form-group {
             border-top: 1px dotted $gray-400;
             padding-top: 1rem;
         }
@@ -553,7 +534,7 @@
                 color: $gray-900;
             }
 
-            +.nav-link {
+            + .nav-link {
                 margin-left: 15px;
             }
         }
