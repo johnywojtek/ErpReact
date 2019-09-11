@@ -1,31 +1,31 @@
 /* ###### 7.6 Mail  ###### */
 
-.az-content-mail {
-    .container,
-    .container-fluid {
-        padding: 10px 0 0 20px;
-    }
-}
-
 .az-content-body-mail {
+    display: block;
+
     padding-bottom: 0;
     // height: calc(100vh - 85px);
     flex: 1;
     overflow: hidden;
 }
 
+.arrow-emial {
+    font-size: 40px;
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
 .az-content-left-mail {
     width: 100vw;
     display: block;
-    padding: 0;
-
-    padding-bottom: 0;
     height: 88vh;
     overflow: hidden;
 
+    display: none;
     @include media-breakpoint-up(lg) {
         width: 220px;
         border-right: 1px solid $gray-400;
+        display: block;
     }
 
     .btn-compose {
@@ -34,14 +34,18 @@
         font-weight: 500;
         font-size: 11px;
         padding: 0 20px;
+        margin: 0 20px;
         letter-spacing: 2px;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 38px;
+        color: #fff !important;
 
         @include media-breakpoint-up(lg) {
+            margin: 0;
             margin-right: 25px;
+            margin-bottom: 10px;
         }
     }
 
@@ -66,11 +70,12 @@
 
 .az-mail-menu {
     position: relative;
-    padding-right: 0;
+    // margin-right: 0;
+    padding-right: 20px;
+    padding-left: 20px;
     height: 100%;
-
     @include media-breakpoint-up(lg) {
-        margin-right: 15px;
+        padding-left: 0;
     }
 
     .nav-link {
@@ -108,15 +113,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin: 20px 0;
     padding: 0 20px;
 
     @include media-breakpoint-up(lg) {
         // padding: 0 0 0 25px;
+        margin: 0;
         margin-bottom: 25px;
     }
 
     > div:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        @include media-breakpoint-up(lg) {
+            width: auto;
+        }
         p {
             font-size: 13px;
             margin-bottom: 0;
@@ -415,7 +428,7 @@
 }
 
 .az-mail-compose-box {
-    width: 50vw;
+    width: auto;
     margin: 0 auto;
     box-shadow: 0 0 30px rgba($gray-900, 0.2);
     @include border-radius();
@@ -434,6 +447,10 @@
 
     @include media-breakpoint-up(lg) {
         padding: 20px 25px;
+    }
+
+    svg {
+        font-size: 20px;
     }
 
     .nav-link {

@@ -76,7 +76,7 @@ class Sidebar extends React.Component {
                         <ul className="nav">
                             <div className="nav-label">
                                 <li>Main Menu</li>
-                                <FontAwesomeIcon icon={faPlus} />
+                                {/* <FontAwesomeIcon icon={faPlus} /> */}
                             </div>
 
                             <Collapse

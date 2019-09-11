@@ -1,15 +1,19 @@
 /* ###### 7.4 Contacts  ###### */
 .participants {
-    padding: 15px 15px 0 15px;
+    padding: 10px;
+
+    @include media-breakpoint-up(md) {
+        padding: 10px 0 0 20px;
+    }
 }
 .az-content-body-show {
-    @include media-breakpoint-only(md) {
-        .az-header-contacts .az-header-menu-icon {
-            display: flex;
+    @include media-breakpoint-down(md) {
+        .az-content-body-contacts {
+            display: block;
         }
 
         .az-content-left-contacts {
-            display: block;
+            display: none;
         }
     }
 }
@@ -165,6 +169,7 @@
     @include media-breakpoint-up(md) {
         display: block;
         overflow-y: auto;
+        flex: 1;
     }
 
     @include media-breakpoint-up(lg) {
@@ -259,21 +264,13 @@
                 font-size: $font-size-base;
             }
 
-            i {
+            svg {
                 font-size: 21px;
                 line-height: 0;
                 margin-right: 5px;
 
                 @include media-breakpoint-up(sm) {
                     margin-right: 7px;
-                }
-
-                &.typcn {
-                    line-height: 0.9;
-
-                    &::before {
-                        width: auto;
-                    }
                 }
             }
 
@@ -294,18 +291,12 @@
 
 .az-contact-info-body {
     display: flex;
-    padding-left: 20px;
+    flex-direction: column;
     word-wrap: break-word;
-
-    .participants-roles {
-        position: relative;
-
-        @include media-breakpoint-up(lg) {
-            padding-bottom: 0;
-            padding-right: 10px;
-            height: calc(80vh - 85px);
-            overflow: hidden;
-        }
+    height: 81%;
+    @include media-breakpoint-up(sm) {
+        flex-direction: row;
+        padding-left: 20px;
     }
 
     .list-group {
@@ -321,7 +312,6 @@
         flex: 1;
 
         .nav {
-            flex-direction: column;
             margin-bottom: 20px;
             border-bottom: 1px solid $gray-400;
 
@@ -334,7 +324,7 @@
             }
         }
 
-        .az-nav-line {
+        .az-nav-line-part {
             .nav-link {
                 text-transform: uppercase;
                 font-size: 12px;
@@ -359,13 +349,6 @@
                         @include media-breakpoint-up(sm) {
                             bottom: -11px;
                         }
-                    }
-                }
-
-                + .nav-link {
-                    @include media-breakpoint-only(sm) {
-                        margin-top: 0;
-                        margin-left: 20px;
                     }
                 }
             }
@@ -416,12 +399,11 @@
 
     .media {
         align-items: center;
-        position: relative;
         margin-top: 25px;
 
-        // &:last-child {
-        //     margin-bottom: 15px;
-        // }
+        &:last-child {
+            margin-bottom: 15px;
+        }
     }
 
     .media-icon {
@@ -439,7 +421,6 @@
     .media-body-info {
         margin-left: 30px;
         border-bottom: 1px dotted $gray-300;
-        width: 40%;
         padding-bottom: 10px;
 
         > div {

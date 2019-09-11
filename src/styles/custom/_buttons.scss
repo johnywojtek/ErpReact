@@ -2,7 +2,6 @@
 
 .btn-az-primary {
     @include button-variant(#3251cd, darken(#3251cd, 5%));
-
 }
 
 .btn-az-secondary {
@@ -25,7 +24,7 @@
         margin-right: 5px;
 
         &.typcn {
-            line-height: .9;
+            line-height: 0.9;
         }
 
         &.fas {
@@ -41,16 +40,10 @@
 .btn-icon {
     width: $az-height-base;
     height: $az-height-base;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    @include border-radius(100%);
 
-    i {
-        line-height: 0;
-        font-size: 24px;
-
-        &.typcn {
-            line-height: .8;
-        }
+    &:first-child {
+        margin-right: 5px;
     }
 }

@@ -49,7 +49,7 @@
 //     }
 // }
 .content-padding {
-    padding: 20px;
+    padding: 0;
 
     @include media-breakpoint-up(lg) {
         padding: 20px 0 0 20px;
@@ -75,11 +75,9 @@
 .az-content-body {
     flex: 1;
     background-color: #fff;
-    border-top: 1px solid #ced4da;
+    // border-top: 1px solid #ced4da;
     display: flex;
-    @include media-breakpoint-up(lg) {
-        height: 91vh;
-    }
+    height: 91vh;
 }
 
 .az-content-title {

@@ -1,7 +1,10 @@
 /* ###### 7.7 Profile  ###### */
 
-
-
+.profile-content {
+    display: flex;
+    padding: 0 20px;
+    padding-top: 10px;
+}
 .az-content-left-profile {
     height: calc(100vh - 93px);
     padding-left: 30px;
@@ -10,7 +13,6 @@
     // border-bottom: 1px solid $gray-400;
     padding-bottom: 25px;
     width: auto;
-
 
     @include media-breakpoint-up(lg) {
         width: 310px;
@@ -36,10 +38,12 @@
         }
     }
 
-    .btn-icon-list .btn {
-        i {
+    .btn-icon-list {
+        display: flex;
+    }
+    .btn-icon-list {
+        svg {
             font-size: 18px;
-
         }
 
         @include border-radius(100%);
@@ -67,9 +71,6 @@
 .az-profile-social-list {
     display: flex;
     flex-flow: row wrap;
-
-
-
 
     .media-icon {
         font-size: 34px;

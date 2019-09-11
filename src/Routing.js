@@ -117,7 +117,7 @@ class Headers extends React.Component {
         return (
             <div>
                 <Router>
-                    <div className="content">
+                    <div className="content-full">
                         <Header onBtnClick={this.onSidebarButtonClick} />
                         <Switch>
                             <Route path="/head/chat" component={Chat} />

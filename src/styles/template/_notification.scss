@@ -3,9 +3,8 @@
 
     .notification-container {
         display: flex;
-        margin: 0 25px;
+        margin-left: 25px;
         height: calc(100vh - 71px);
-
     }
 }
 
@@ -14,11 +13,14 @@
     flex: 1;
 
     .media-contact-name {
+        display: flex;
+        flex-direction: column;
+        @include media-breakpoint-up(sm) {
+            flex-direction: row;
+        }
         span:first-child {
             font-weight: normal !important;
         }
-
-
     }
 
     .media-body {
@@ -28,22 +30,27 @@
 
         .notif-action {
             padding-top: 2px;
+            display: none;
+            @include media-breakpoint-up(sm) {
+                display: block;
+            }
+            a {
+                color: $az-color-primary !important;
+                // display: flex;
+                justify-content: center;
+                // flex-direction: column;
+                align-items: center;
+                font-size: 14px;
+
+                svg {
+                    padding-right: 6px;
+                    font-size: 21px;
+                }
+            }
         }
 
         a:first-child {
             padding-right: 20px;
-        }
-
-        a {
-            color: $az-color-primary !important;
-
-            font-size: 14px;
-
-
-            i {
-                padding-right: 6px;
-                font-size: 15px;
-            }
         }
     }
 }
@@ -55,9 +62,8 @@
     }
 
     .media {
-        padding: 12px 20px;
+        padding: 12px 0;
         border: 1px solid transparent;
-        position: relative;
         display: flex;
         align-items: center;
 
@@ -65,25 +71,10 @@
             padding: 12px 15px;
         }
 
-
         .notif-user::after {
             content: '';
             display: none;
         }
-
-        +.media {
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: -1px;
-                left: 65px;
-                right: 0;
-                border-top: 1px solid $gray-200;
-            }
-        }
-
-
 
         @include hover-focus() {
             cursor: pointer;
@@ -96,9 +87,7 @@
                 border-top-color: transparent;
             }
         }
-
     }
-
 
     .media-body {
         margin-left: 20px;
@@ -106,7 +95,7 @@
 
     .media-contact-name {
         display: flex;
-        align-items: center;
+        // align-items: center;
         justify-content: space-between;
         margin-bottom: 2px;
 
@@ -121,6 +110,10 @@
             display: block;
             font-size: 11px;
             color: $gray-500;
+            margin-right: auto;
+            @include media-breakpoint-up(sm) {
+                margin: 0;
+            }
         }
     }
 }
