@@ -9237,6 +9237,53 @@ a.text-dark:hover, a.text-dark:focus {
     .az-sidebar {
       display: flex;
       width: 18vw; } }
+  .az-sidebar .rc-collapse {
+    outline: none; }
+    .az-sidebar .rc-collapse :focus {
+      outline: none; }
+  .az-sidebar .rc-collapse-anim-active {
+    transition: height 0.2s ease-out; }
+  .az-sidebar .rc-collapse > .rc-collapse-item:first-child .rc-collapse-header::before {
+    border-top: none; }
+  .az-sidebar .rc-collapse > .rc-collapse-item > .rc-collapse-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    height: 41px;
+    padding: 0;
+    padding-top: 2px;
+    color: #212229;
+    position: relative;
+    cursor: pointer; }
+    .az-sidebar .rc-collapse > .rc-collapse-item > .rc-collapse-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 30px;
+      right: 0;
+      border-top: 1px dotted #ced4da; }
+    .az-sidebar .rc-collapse > .rc-collapse-item > .rc-collapse-header.nav-second::before {
+      display: none; }
+    .az-sidebar .rc-collapse > .rc-collapse-item > .rc-collapse-header svg {
+      font-size: 24px;
+      height: 20px;
+      margin-bottom: 3px;
+      margin-right: 8px; }
+      .az-sidebar .rc-collapse > .rc-collapse-item > .rc-collapse-header svg::before {
+        width: auto; }
+  .az-sidebar .rc-collapse-content {
+    overflow: hidden; }
+  .az-sidebar .rc-collapse-content > .rc-collapse-content-box {
+    padding-left: 21px;
+    margin-left: 10px;
+    border-left: 2px solid #e9ecef; }
+  .az-sidebar .rc-collapse-content-inactive {
+    display: none; }
+  .az-sidebar .rc-collapse-item:last-child > .rc-collapse-content {
+    border-radius: 0 0 3px 3px; }
 
 .az-sidebar-header {
   display: flex;
@@ -9310,61 +9357,6 @@ a.text-dark:hover, a.text-dark:focus {
     display: none; }
   .az-sidebar-hide .az-sidebar-sticky + .az-content {
     margin-left: 0; } }
-
-.rc-collapse {
-  outline: none; }
-  .rc-collapse :focus {
-    outline: none; }
-
-.rc-collapse-anim-active {
-  transition: height 0.2s ease-out; }
-
-.rc-collapse > .rc-collapse-item:first-child .rc-collapse-header::before {
-  border-top: none; }
-
-.rc-collapse > .rc-collapse-item > .rc-collapse-header {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  height: 41px;
-  padding: 0;
-  padding-top: 2px;
-  color: #212229;
-  position: relative;
-  cursor: pointer; }
-  .rc-collapse > .rc-collapse-item > .rc-collapse-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 30px;
-    right: 0;
-    border-top: 1px dotted #ced4da; }
-  .rc-collapse > .rc-collapse-item > .rc-collapse-header.nav-second::before {
-    display: none; }
-  .rc-collapse > .rc-collapse-item > .rc-collapse-header svg {
-    font-size: 24px;
-    height: 20px;
-    margin-bottom: 3px;
-    margin-right: 8px; }
-    .rc-collapse > .rc-collapse-item > .rc-collapse-header svg::before {
-      width: auto; }
-
-.rc-collapse-content {
-  overflow: hidden; }
-
-.rc-collapse-content > .rc-collapse-content-box {
-  padding-left: 21px;
-  margin-left: 10px;
-  border-left: 2px solid #e9ecef; }
-
-.rc-collapse-content-inactive {
-  display: none; }
-
-.rc-collapse-item:last-child > .rc-collapse-content {
-  border-radius: 0 0 3px 3px; }
 
 /* ############### TEMPLATE STYLES ############### */
 /* ###### 7.2 Calendar  ###### */
@@ -10679,6 +10671,52 @@ a.text-dark:hover, a.text-dark:focus {
       color: #212229;
       font-weight: 500; }
 
+.info {
+  width: 70%;
+  margin: 0 auto; }
+  @media (max-width: 991.98px) {
+    .info {
+      width: 90%;
+      background-color: #fff; } }
+  .info h2 {
+    background: #fff;
+    border: none;
+    margin: 20px; }
+  .info .rc-collapse {
+    border-radius: 3px; }
+  .info .rc-collapse-anim-active {
+    transition: height 0.2s ease-out; }
+  .info .rc-collapse > .rc-collapse-item {
+    background-color: #f7f7f7;
+    border-top: 1px solid #d9d9d9; }
+  .info .rc-collapse > .rc-collapse-item:first-child {
+    border-top: none; }
+  .info .rc-collapse > .rc-collapse-item > .rc-collapse-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    line-height: 22px;
+    padding: 10px 16px;
+    color: #666;
+    cursor: pointer; }
+    .info .rc-collapse > .rc-collapse-item > .rc-collapse-header svg {
+      display: none; }
+  .info .rc-collapse > .rc-collapse-item > .rc-collapse-header .rc-collapse-extra {
+    margin: 0 16px 0 auto; }
+  .info .rc-collapse-content {
+    overflow: hidden;
+    color: #666;
+    padding: 0 16px;
+    background-color: #fff; }
+  .info .rc-collapse-content > .rc-collapse-content-box {
+    margin-top: 16px;
+    margin-bottom: 16px; }
+  .info .rc-collapse-content-inactive {
+    display: none; }
+  .info .rc-collapse-item:last-child > .rc-collapse-content {
+    border-radius: 0 0 3px 3px; }
+
 /* ###### 7.6 Mail  ###### */
 .az-content-body-mail {
   display: block;
@@ -11536,6 +11574,51 @@ a.text-dark:hover, a.text-dark:focus {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+
+.disks {
+  padding: 10px 0 0 20px;
+  height: 91vh; }
+  .disks-wrapper {
+    padding: 30px;
+    padding-left: 0;
+    padding-right: 25px; }
+    @media (min-width: 992px) {
+      .disks-wrapper {
+        padding-right: 100px; } }
+    .disks-wrapper div {
+      margin-bottom: 20px;
+      padding: 0 20px; }
+  .disks h2 {
+    display: block;
+    border-bottom: 1px solid #ced4da;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    width: 98%; }
+  .disks .disks-button {
+    cursor: pointer;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    .disks .disks-button svg {
+      height: 20px;
+      width: 20px;
+      margin: 0 20px;
+      fill: rgba(0, 0, 0, 0.7); }
+      .disks .disks-button svg:hover {
+        fill: #3251cd; }
+    .disks .disks-button span {
+      padding-right: 12px;
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.7); }
+    .disks .disks-button:hover {
+      border: 1px solid #3251cd; }
+      .disks .disks-button:hover svg {
+        fill: #3251cd; }
 
 .small-chat {
   position: absolute;
