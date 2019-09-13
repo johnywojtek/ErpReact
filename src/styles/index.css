@@ -10120,6 +10120,9 @@ a.text-dark:hover, a.text-dark:focus {
   justify-content: space-between;
   margin-bottom: 2px; }
   .az-chat-list .media-contact-name span:first-child {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     display: block;
     font-size: 14px;
     font-weight: 500;
@@ -11574,6 +11577,24 @@ a.text-dark:hover, a.text-dark:focus {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+
+.sms {
+  padding: 10px; }
+  @media (min-width: 992px) {
+    .sms {
+      padding: 10px 0 0 20px; } }
+  .sms thead tr th:first-child {
+    text-overflow: clip; }
+  .sms thead tr th:nth-child(2) {
+    width: 10%;
+    text-overflow: clip;
+    text-align: center !important; }
+  .sms tbody tr td:nth-child(2) {
+    width: 10%;
+    text-align: center !important;
+    text-overflow: clip; }
+  .sms tbody tr td:first-child {
+    text-overflow: clip; }
 
 .disks {
   padding: 10px 0 0 20px;

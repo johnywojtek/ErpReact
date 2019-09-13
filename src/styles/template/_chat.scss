@@ -259,6 +259,9 @@
         margin-bottom: 2px;
 
         span:first-child {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             display: block;
             font-size: 14px;
             font-weight: 500;
