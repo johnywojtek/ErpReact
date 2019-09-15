@@ -1,7 +1,7 @@
 /* ###### 6.8 Sidebar  ###### */
 
 .az-sidebar {
-    width: 100vw;
+    width: 70vw;
     height: 100vh;
     display: none;
     flex-direction: column;
@@ -185,7 +185,7 @@
 .az-sidebar-show {
     @include media-breakpoint-down(md) {
         overflow: hidden;
-
+        transition: 2s all;
         .az-sidebar {
             display: flex;
             overflow-y: auto;
@@ -193,13 +193,13 @@
         }
 
         .az-content {
-            transform: translateX($az-width-sidebar);
+            transform: translateX(70vw);
         }
 
         .az-navbar-backdrop {
             @include media-breakpoint-down(md) {
                 display: block;
-                left: $az-width-sidebar;
+                left: 70vw;
             }
         }
     }

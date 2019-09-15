@@ -1,6 +1,7 @@
 /* ###### 7.4 Contacts  ###### */
 .participants {
     padding: 10px;
+    position: relative;
 
     @include media-breakpoint-up(md) {
         padding: 10px 0 0 20px;
@@ -10,10 +11,14 @@
     @include media-breakpoint-down(md) {
         .az-content-body-contacts {
             display: block;
+            position: relative;
         }
 
         .az-content-left-contacts {
-            display: none;
+            position: absolute;
+            z-index: 10000;
+            top: 0;
+            left: 0;
         }
     }
 }
@@ -42,7 +47,9 @@
 }
 
 .az-content-left-contacts {
-    width: 100%;
+    width: 80vw;
+    height: 98%;
+    background-color: #fff;
     display: block;
     padding: 0;
 
@@ -290,6 +297,7 @@
 }
 
 .az-contact-info-body {
+    position: relative;
     display: flex;
     flex-direction: column;
     word-wrap: break-word;

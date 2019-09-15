@@ -28,6 +28,7 @@ export default function Participants() {
                     </a>
                 </nav>
                 <Scrollbars style={{ height: '89%' }}>
+                    <button className="content-toggler">></button>
                     <div id="azContactList" class="az-contacts-list">
                         <div class="az-contact-label">A</div>
                         <Contact />
@@ -145,9 +146,9 @@ export default function Participants() {
                                 </div>
                             </div>
                         </div>
+
                         <ul class="list-group">
                             <label className="az-content-label">Roles</label>
-
                             <li class="list-group-item">King of Smart Oak</li>
                             <li class="list-group-item">King of Smart Oak</li>
                             <li class="list-group-item">King of Smart Oak</li>

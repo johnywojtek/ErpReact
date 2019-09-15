@@ -1,16 +1,15 @@
-.roles-content {
-    width: 80vw;
+.roles-body {
+    display: flex;
+    padding: 10px 0 0 20px;
 }
 
 .show-roles {
-
     height: calc(100vh - 66px);
     border-right: 1px solid $gray-500;
     width: 14vw;
     padding-top: 20px;
 
     li {
-
         border: none;
     }
 }
@@ -18,7 +17,7 @@
 .edit-roles {
     width: 20vw;
 
-    input[type="color"] {
+    input[type='color'] {
         width: 5vw;
     }
 }

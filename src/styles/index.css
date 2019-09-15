@@ -8094,6 +8094,19 @@ a.text-dark:hover, a.text-dark:focus {
   .btn-icon:first-child {
     margin-right: 5px; }
 
+.content-toggler {
+  position: absolute;
+  z-index: 1000000999999999999;
+  top: 40%;
+  right: -20px;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-color: greenyellow; }
+  @media (min-width: 768px) {
+    .content-toggler {
+      display: none; } }
+
 /* ###### 5.2 Charts  ###### */
 .az-donut-chart {
   position: relative;
@@ -9219,7 +9232,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* ###### 6.8 Sidebar  ###### */
 .az-sidebar {
-  width: 100vw;
+  width: 70vw;
   height: 100vh;
   display: none;
   flex-direction: column;
@@ -9340,17 +9353,18 @@ a.text-dark:hover, a.text-dark:focus {
 
 @media (max-width: 991.98px) {
   .az-sidebar-show {
-    overflow: hidden; }
+    overflow: hidden;
+    transition: 2s all; }
     .az-sidebar-show .az-sidebar {
       display: flex;
       overflow-y: auto;
       border-right-width: 0; }
     .az-sidebar-show .az-content {
-      transform: translateX(270px); } }
+      transform: translateX(70vw); } }
   @media (max-width: 991.98px) and (max-width: 991.98px) {
     .az-sidebar-show .az-navbar-backdrop {
       display: block;
-      left: 270px; } }
+      left: 70vw; } }
 
 @media (min-width: 992px) {
   .az-sidebar-hide .az-sidebar {
@@ -10363,16 +10377,21 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* ###### 7.4 Contacts  ###### */
 .participants {
-  padding: 10px; }
+  padding: 10px;
+  position: relative; }
   @media (min-width: 768px) {
     .participants {
       padding: 10px 0 0 20px; } }
 
 @media (max-width: 991.98px) {
   .az-content-body-show .az-content-body-contacts {
-    display: block; }
+    display: block;
+    position: relative; }
   .az-content-body-show .az-content-left-contacts {
-    display: none; } }
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0; } }
 
 .block-button {
   cursor: pointer; }
@@ -10391,7 +10410,9 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 10px 0 0 20px; }
 
 .az-content-left-contacts {
-  width: 100%;
+  width: 80vw;
+  height: 98%;
+  background-color: #fff;
   display: block;
   padding: 0; }
   @media (min-width: 768px) {
@@ -10573,6 +10594,7 @@ a.text-dark:hover, a.text-dark:focus {
             margin-left: 25px; } }
 
 .az-contact-info-body {
+  position: relative;
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
@@ -11433,8 +11455,9 @@ a.text-dark:hover, a.text-dark:focus {
   .az-signup-footer a:hover, .az-signup-footer a:focus {
     color: #3251cd; }
 
-.roles-content {
-  width: 80vw; }
+.roles-body {
+  display: flex;
+  padding: 10px 0 0 20px; }
 
 .show-roles {
   height: calc(100vh - 66px);
@@ -11446,7 +11469,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .edit-roles {
   width: 20vw; }
-  .edit-roles input[type="color"] {
+  .edit-roles input[type='color'] {
     width: 5vw; }
 
 .notification-content .notification-container {
@@ -11719,8 +11742,8 @@ a.text-dark:hover, a.text-dark:focus {
 @media (min-width: 992px) {
   .small-chat-body {
     padding-bottom: 0;
-    height: 39vh;
-    width: 21vw;
+    height: 330px;
+    width: 280px;
     overflow: hidden; } }
 
 .small-chat-body .content-inner {

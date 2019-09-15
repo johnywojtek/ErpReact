@@ -47,3 +47,17 @@
         margin-right: 5px;
     }
 }
+
+.content-toggler {
+    position: absolute;
+    z-index: 1000000999999999999;
+    top: 40%;
+    right: -20px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-color: greenyellow;
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+}

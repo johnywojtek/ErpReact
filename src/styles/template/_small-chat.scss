@@ -6,6 +6,7 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     font-family: $font-family-base;
     background-color: #fcfcfc;
+
     @include media-breakpoint-down(md) {
         display: none;
     }
@@ -110,8 +111,8 @@
 .small-chat-body {
     @include media-breakpoint-up(lg) {
         padding-bottom: 0;
-        height: 39vh;
-        width: 21vw;
+        height: 330px;
+        width: 280px;
         overflow: hidden;
     }
 
