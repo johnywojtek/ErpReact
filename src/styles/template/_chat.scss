@@ -23,8 +23,11 @@
 
 .content-chat {
     display: flex;
-    padding: 0 20px;
-    padding-top: 25px;
+    padding: 0;
+    @include media-breakpoint-up(lg) {
+        padding: 0 20px;
+        padding-top: 25px;
+    }
 }
 
 .az-content-left-chat {
@@ -33,9 +36,9 @@
     display: flex;
     flex-direction: column;
     padding: 0;
-    border-right: 1px solid $gray-400;
 
     @include media-breakpoint-up(lg) {
+        border-right: 1px solid $gray-400;
         width: 350px;
     }
 }
@@ -508,7 +511,7 @@
 
 //Right Side
 .az-content-left-invoice {
-    display: block;
+    display: none;
     padding: 0;
 
     @include media-breakpoint-down(md) {
@@ -516,6 +519,8 @@
     }
 
     @include media-breakpoint-up(lg) {
+        display: block;
+
         border-left: 1px solid $gray-400;
     }
 

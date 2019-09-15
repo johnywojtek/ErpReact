@@ -1,17 +1,35 @@
 .roles-body {
     display: flex;
     padding: 10px 0 0 20px;
+    width: 50vw;
+    .list-group {
+        width: 180px;
+        margin-top: 20px;
+        .list-group-item {
+            border: 1px solid $gray-400;
+            cursor: pointer;
+            margin: 5px 0;
+            &:hover {
+                background-color: $gray-100;
+            }
+        }
+    }
 }
 
 .show-roles {
     height: calc(100vh - 66px);
     border-right: 1px solid $gray-500;
-    width: 14vw;
+    width: 17vw;
     padding-top: 20px;
 
     li {
         border: none;
     }
+}
+.add-role {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .edit-roles {

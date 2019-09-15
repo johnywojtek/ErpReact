@@ -2,21 +2,28 @@
 
 .profile-content {
     display: flex;
+    flex-direction: column;
+
     padding: 0 20px;
     padding-top: 10px;
+
+    @include media-breakpoint-up(lg) {
+        flex-direction: row;
+    }
 }
 .az-content-left-profile {
-    height: calc(100vh - 93px);
-    padding-left: 30px;
     padding-right: 0;
     display: block;
     // border-bottom: 1px solid $gray-400;
-    padding-bottom: 25px;
+
     width: auto;
 
     @include media-breakpoint-up(lg) {
+        height: calc(100vh - 93px);
+
         width: 310px;
         padding-right: 20px;
+        padding-left: 30px;
         padding-bottom: 0;
         border-right: 1px solid $gray-400;
         border-bottom: 0;
@@ -25,6 +32,10 @@
     @include media-breakpoint-up(xl) {
         padding-right: 25px;
     }
+}
+.profile-activity {
+    order: 2;
+    display: block;
 }
 
 .az-profile-overview {
@@ -83,12 +94,22 @@
 }
 
 .profile-roles {
-    border-left: 1px solid $gray-400;
+    order: 1;
+    width: 80vw;
 
-    width: 13vw;
+    @include media-breakpoint-up(lg) {
+        order: 2;
+
+        width: 13vw;
+        border-left: 1px solid $gray-400;
+    }
 
     li {
         border: none;
-        padding: 10px 20px;
+
+        padding-left: 0;
+        @include media-breakpoint-up(lg) {
+            padding: 10px 20px;
+        }
     }
 }
