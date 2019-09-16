@@ -3,12 +3,14 @@
 .az-sidebar {
     width: 70vw;
     height: 100vh;
-    display: none;
+
     flex-direction: column;
     border-right: 1px solid $gray-400;
     flex-shrink: 0;
 
     @include media-breakpoint-down(md) {
+        transform: translateX(-70vw);
+        transition: 0.5s transform;
         position: fixed;
         top: 0;
         left: 0;
@@ -182,24 +184,39 @@
     }
 }
 
+.az-navbar-backdrop {
+    position: fixed;
+    top: 0;
+
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#000, 0.45);
+    z-index: 900;
+    width: 0px;
+    opacity: 0;
+    transition: 0.3s all;
+}
+
 .az-sidebar-show {
     @include media-breakpoint-down(md) {
         overflow: hidden;
-        transition: 2s all;
+
         .az-sidebar {
             display: flex;
+            transform: translateX(0);
+
             overflow-y: auto;
             border-right-width: 0;
         }
 
         .az-content {
-            transform: translateX(70vw);
+            // transform: translateX(70vw);
         }
 
         .az-navbar-backdrop {
             @include media-breakpoint-down(md) {
-                display: block;
-                left: 70vw;
+                width: 50%;
+                opacity: 1;
             }
         }
     }

@@ -9234,12 +9234,13 @@ a.text-dark:hover, a.text-dark:focus {
 .az-sidebar {
   width: 70vw;
   height: 100vh;
-  display: none;
   flex-direction: column;
   border-right: 1px solid #ced4da;
   flex-shrink: 0; }
   @media (max-width: 991.98px) {
     .az-sidebar {
+      transform: translateX(-70vw);
+      transition: 0.5s transform;
       position: fixed;
       top: 0;
       left: 0;
@@ -9351,20 +9352,29 @@ a.text-dark:hover, a.text-dark:focus {
     .az-sidebar-body .nav-sub-link.active {
       color: #3251cd; }
 
+.az-navbar-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 900;
+  width: 0px;
+  opacity: 0;
+  transition: 0.3s all; }
+
 @media (max-width: 991.98px) {
   .az-sidebar-show {
-    overflow: hidden;
-    transition: 2s all; }
+    overflow: hidden; }
     .az-sidebar-show .az-sidebar {
       display: flex;
+      transform: translateX(0);
       overflow-y: auto;
-      border-right-width: 0; }
-    .az-sidebar-show .az-content {
-      transform: translateX(70vw); } }
+      border-right-width: 0; } }
   @media (max-width: 991.98px) and (max-width: 991.98px) {
     .az-sidebar-show .az-navbar-backdrop {
-      display: block;
-      left: 70vw; } }
+      width: 50%;
+      opacity: 1; } }
 
 @media (min-width: 992px) {
   .az-sidebar-hide .az-sidebar {
@@ -9959,6 +9969,16 @@ a.text-dark:hover, a.text-dark:focus {
   margin-bottom: 5px; }
 
 /* ###### 7.3 Chat  ###### */
+@media (max-width: 991.98px) {
+  .az-content-body-show .az-header-menu-icon {
+    display: none; }
+  .az-content-body-show .az-header-left .az-header-arrow {
+    display: block; }
+  .az-content-body-show .az-content-left-chat {
+    display: none; }
+  .az-content-body-show .az-content-body-chat {
+    display: flex; } }
+
 .content-chat {
   display: flex;
   padding: 0; }

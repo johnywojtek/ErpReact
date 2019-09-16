@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../img/neur.jpg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -14,7 +15,7 @@ import { faComments, faBell } from '@fortawesome/free-regular-svg-icons';
 
 import classNames from 'classnames';
 
-export default class Header extends Component {
+export default class FullHeader extends Component {
     constructor(props) {
         super(props);
 
@@ -56,7 +57,7 @@ export default class Header extends Component {
     };
 
     onSidebarButtonClick = () => {
-        this.props.onBtnClick(true);
+        console.log('siema');
     };
 
     render() {
@@ -65,16 +66,14 @@ export default class Header extends Component {
                 <div className="az-header">
                     <div className="container-fluid">
                         <div className="az-header-left">
-                            <div
-                                onClick={this.onSidebarButtonClick}
-                                id="azSidebarToggle"
-                                className="az-header-menu-icon d-lg-none d-flex"
-                            >
-                                <span />
-                            </div>
-                            <a id="azChatBodyHide" className="az-header-arrow">
-                                <i className="icon ion-md-arrow-back" />
+                            <a href="/template/main-page.html">
+                                <img
+                                    src={logo}
+                                    style={{ width: '140px' }}
+                                    alt=""
+                                />
                             </a>
+                            <FontAwesomeIcon icon={faArrowLeft} />
                         </div>
                         <div className="az-header-center">
                             <input

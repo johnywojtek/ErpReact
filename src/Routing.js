@@ -7,11 +7,13 @@ import {
 } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import MainPage from './components/mainPage/MainPage';
-import Header from './components/Header';
+import MainHeader from './components/MainHeader';
 import classNames from 'classnames';
 import Participants from './components/Participants';
 import Email from './components/Email';
 import Signin from './components/Signin';
+import FullHeader from './components/FullHeader';
+
 import Signup from './components/Signup';
 import Notification from './components/Notification';
 import Profile from './components/Profile';
@@ -92,7 +94,9 @@ class RoutingSidebar extends React.Component {
                     >
                         <Sidebar onBtnClick={this.onSidebarButtonClick} />
                         <div className="content">
-                            <Header onBtnClick={this.onSidebarButtonClick} />
+                            <MainHeader
+                                onBtnClick={this.onSidebarButtonClick}
+                            />
 
                             {routes.map((route, index) => (
                                 // Render more <Route>s with the same paths as
@@ -105,6 +109,7 @@ class RoutingSidebar extends React.Component {
                                 />
                             ))}
                         </div>
+                        <div className="az-navbar-backdrop"></div>
                     </div>
                 </Router>
             </div>
@@ -118,7 +123,7 @@ class Headers extends React.Component {
             <div>
                 <Router>
                     <div className="content-full">
-                        <Header onBtnClick={this.onSidebarButtonClick} />
+                        <FullHeader onBtnClick={this.onSidebarButtonClick} />
                         <Switch>
                             <Route path="/head/chat" component={Chat} />
                             <Route path="/head/profile" component={Profile} />

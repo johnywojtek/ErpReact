@@ -17,6 +17,7 @@ import {
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import Slider from 'react-slick';
 import ActiveContacts from './ActiveContacts';
+
 export default class Chat extends Component {
     render() {
         return (

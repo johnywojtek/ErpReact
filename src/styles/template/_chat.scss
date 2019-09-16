@@ -1,25 +1,24 @@
 /* ###### 7.3 Chat  ###### */
 
-// .az-content-body-show {
-//     @include media-breakpoint-down(md) {
-//         .az-header-menu-icon {
-//             display: none;
-//         }
+.az-content-body-show {
+    @include media-breakpoint-down(md) {
+        .az-header-menu-icon {
+            display: none;
+        }
 
-//         .az-header-left .az-header-arrow {
-//             display: block;
-//         }
+        .az-header-left .az-header-arrow {
+            display: block;
+        }
 
-//         .az-content-left-chat {
-//             display: none;
-//         }
+        .az-content-left-chat {
+            display: none;
+        }
 
-//         .az-content-body-chat {
-//             display: flex;
-//         }
-//     }
-
-// }
+        .az-content-body-chat {
+            display: flex;
+        }
+    }
+}
 
 .content-chat {
     display: flex;
