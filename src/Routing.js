@@ -1,10 +1,12 @@
 import React from 'react';
+
 import {
     HashRouter as Router,
     Route,
     Switch,
     Redirect
 } from 'react-router-dom';
+import MyContext from './MyContext';
 import Sidebar from './components/Sidebar';
 import MainPage from './components/mainPage/MainPage';
 import MainHeader from './components/MainHeader';
@@ -13,7 +15,6 @@ import Participants from './components/Participants';
 import Email from './components/Email';
 import Signin from './components/Signin';
 import FullHeader from './components/FullHeader';
-
 import Signup from './components/Signup';
 import Notification from './components/Notification';
 import Profile from './components/Profile';
@@ -26,10 +27,6 @@ import Disks from './components/Disks';
 import Sms from './components/Sms';
 import Info from './components/Info';
 
-// Each logical "route" has two components, one for
-// the sidebar and one for the main area. We want to
-// render both of them in different places when the
-// path matches the current URL.
 const routes = [
     {
         path: '/main',
@@ -117,13 +114,33 @@ class RoutingSidebar extends React.Component {
     }
 }
 
+class MyProvider extends React.Component {
+    state = { toggleChat: false };
+
+    render() {
+        return (
+            <MyContext.Provider
+                value={{
+                    state: this.state,
+                    toggleChat: () => {
+                        this.setState(prevState => ({
+                            toggleChat: !prevState.toggleChat
+                        }));
+                    }
+                }}
+            >
+                {this.props.children}
+            </MyContext.Provider>
+        );
+    }
+}
 class Headers extends React.Component {
     render() {
         return (
-            <div>
+            <MyProvider>
                 <Router>
                     <div className="content-full">
-                        <FullHeader onBtnClick={this.onSidebarButtonClick} />
+                        <FullHeader />
                         <Switch>
                             <Route path="/head/chat" component={Chat} />
                             <Route path="/head/profile" component={Profile} />
@@ -134,7 +151,7 @@ class Headers extends React.Component {
                         </Switch>
                     </div>
                 </Router>
-            </div>
+            </MyProvider>
         );
     }
 }

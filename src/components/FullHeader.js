@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../img/neur.jpg';
-
+import MyContext from '../MyContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
@@ -35,8 +35,6 @@ export default class FullHeader extends Component {
     };
 
     onAvatarClick = () => {
-        console.log('hi');
-
         this.setState({ showAvatar: this.state.showAvatar ? false : true });
     };
 
@@ -66,14 +64,24 @@ export default class FullHeader extends Component {
                 <div className="az-header">
                     <div className="container-fluid">
                         <div className="az-header-left">
-                            <a href="/template/main-page.html">
-                                <img
-                                    src={logo}
-                                    style={{ width: '140px' }}
-                                    alt=""
-                                />
-                            </a>
-                            <FontAwesomeIcon icon={faArrowLeft} />
+                            <MyContext.Consumer>
+                                {context =>
+                                    context.state.toggleChat ? (
+                                        <FontAwesomeIcon
+                                            onClick={context.toggleChat}
+                                            icon={faArrowLeft}
+                                        />
+                                    ) : (
+                                        <a href="/template/main-page.html">
+                                            <img
+                                                src={logo}
+                                                style={{ width: '140px' }}
+                                                alt=""
+                                            />
+                                        </a>
+                                    )
+                                }
+                            </MyContext.Consumer>
                         </div>
                         <div className="az-header-center">
                             <input

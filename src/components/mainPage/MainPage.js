@@ -13,15 +13,24 @@ import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import Message from './Message';
 import User from '../User';
 import FastChat from './FastChat';
+import Loading from '../Loading';
 
 export default class MainPage extends React.Component {
-    state = { users: [], loading: null };
+    state = { users: [], loading: true };
+
     componentDidMount() {
         this.setState({ loading: true });
         axios
-            .get('https://randomuser.me/api/')
-            .then(e => this.setState({ users: e.data.results }));
+            .get('https://randomuser.me/api/', {
+                params: {
+                    results: 20
+                }
+            })
+            .then(e =>
+                this.setState({ users: e.data.results, loading: false })
+            );
     }
+
     render() {
         return (
             <div>
@@ -95,17 +104,14 @@ export default class MainPage extends React.Component {
                         <FastChat />
                         <Scrollbars style={{ height: '100%' }}>
                             <div id="azChatList" class="az-chat-list">
-                                {this.state.users.map(e => {
-                                    console.log(e);
-
-                                    return (
-                                        <User
-                                            username={`${e.name.first} ${e.name.last}`}
-                                            time={`${e.registered.age} days`}
-                                            email={e.email}
-                                        />
-                                    );
-                                })}
+                                {this.state.loading ? (
+                                    <Loading />
+                                ) : (
+                                    <User
+                                        people={this.state.users}
+                                        emial={true}
+                                    />
+                                )}
                             </div>
                         </Scrollbars>
                     </div>
