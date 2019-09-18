@@ -12,7 +12,7 @@ import {
 export default class Profile extends Component {
     render() {
         return (
-            <Scrollbars style={{ height: '91%' }}>
+            <Scrollbars className="scrollbar-profile">
                 <div class="profile-content">
                     <div class="az-content-left-profile">
                         <div class="az-profile-overview">
@@ -83,7 +83,7 @@ export default class Profile extends Component {
                                 <h5 className="mb-0">Activity</h5>
                             </div>
                         </div>
-                        <Scrollbars style={{ height: '93%' }}>
+                        <Scrollbars className="scrollbar-profile-posts">
                             <div id="azChatBody" class="az-chat-body">
                                 <div class="content-inner">
                                     <label class="az-chat-time">
@@ -360,7 +360,7 @@ export default class Profile extends Component {
 
                     <ul class="list-group profile-roles">
                         <li class="list-group-item">
-                            <h4>Roles</h4>
+                            <h4 className="mb-0">Roles</h4>
                         </li>
 
                         <li class="list-group-item">King of Smart Oak</li>

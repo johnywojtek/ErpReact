@@ -11,7 +11,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import Message from './Message';
-import User from '../User';
+import User2 from '../User2';
 import FastChat from './FastChat';
 import Loading from '../Loading';
 
@@ -107,7 +107,7 @@ export default class MainPage extends React.Component {
                                 {this.state.loading ? (
                                     <Loading />
                                 ) : (
-                                    <User
+                                    <User2
                                         people={this.state.users}
                                         emial={true}
                                     />

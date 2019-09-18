@@ -52,11 +52,12 @@
     padding-bottom: 5px;
     flex-shrink: 0;
     flex-direction: row;
+    margin: 10px 0;
     padding-left: 20px;
-    margin-bottom: 20px;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
         padding-left: 0;
+        margin-bottom: 20px;
     }
 
     .nav-link {
@@ -476,18 +477,13 @@
         padding: 0;
         color: $gray-400;
         font-size: 20px;
-        display: none;
 
         &:first-child {
             display: block;
         }
 
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(lg) {
             display: block;
-
-            &:first-child {
-                display: none;
-            }
         }
 
         i {
@@ -522,7 +518,8 @@
     padding: 0;
 
     @include media-breakpoint-down(md) {
-        display: none;
+        position: absolute;
+        width: 40vw;
     }
 
     @include media-breakpoint-up(lg) {
@@ -530,10 +527,26 @@
 
         border-left: 1px solid $gray-400;
     }
-
+    .invoice-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include media-breakpoint-up(lg) {
+            justify-content: flex-start;
+        }
+        svg {
+            font-size: 30px;
+            margin-left: 20px;
+            @include media-breakpoint-up(lg) {
+                display: none;
+            }
+        }
+    }
     .az-content-breadcrumb,
     .az-content-title {
         padding-left: 20px;
+        padding-right: 20px;
+
         padding-top: 19px;
         margin-bottom: 20px;
     }
@@ -542,6 +555,7 @@
 .az-invoice-list {
     position: relative;
     border-top: 1px solid $gray-400;
+    height: 90%;
 
     @include media-breakpoint-up(lg) {
         height: calc(100% - 62px);
@@ -600,7 +614,10 @@
             justify-content: space-between;
 
             span {
-                word-break: break-all;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100px;
             }
 
             span:last-child {

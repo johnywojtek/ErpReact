@@ -1,53 +1,25 @@
 /* ###### 6.1 Content  ###### */
 
-// .az-content-left-show {
-//     @media (max-width: 575px) {
-//         overflow: hidden;
-//     }
+.az-content-left-show {
+    .az-content-left {
+        @include media-breakpoint-down(md) {
+            // transform: translateX(-70vw);
+            width: 70vw;
+            height: 100%;
+            display: block;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: #fff;
+            z-index: 800;
+            border-right: 1px solid $gray-400;
+            box-shadow: 0 0 3px rgba($gray-900, 0.1);
+            overflow-y: auto;
+        }
+    }
+}
 
-//     .az-content-left {
-//         @include media-breakpoint-down(md) {
-//             display: block;
-//             position: fixed;
-//             top: 0;
-//             bottom: 0;
-//             left: 0;
-//             background-color: #fff;
-//             z-index: 800;
-//             border-right: 1px solid $gray-400;
-//             box-shadow: 0 0 3px rgba($gray-900, 0.1);
-//             overflow-y: auto;
-//         }
-//     }
-
-//     .az-content-body {
-//         @media (max-width: 575px) {
-//             display: none;
-//         }
-//     }
-// }
-
-// .az-content-body-show {
-//     @include media-breakpoint-down(md) {
-//         .az-header {
-//             .az-header-menu-icon {
-//                 display: none;
-//             }
-
-//             .az-header-left .az-header-arrow {
-//                 display: block;
-//             }
-//         }
-
-//         .az-content-left {
-//             display: none;
-//         }
-
-//         .az-content-body {
-//             display: block;
-//         }
-//     }
-// }
 .content-padding {
     padding: 0;
 
@@ -61,7 +33,6 @@
     padding: 0 20px 20px;
     flex-shrink: 0;
     display: none;
-
     @include media-breakpoint-up(sm) {
         width: 280px;
     }

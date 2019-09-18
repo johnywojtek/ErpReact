@@ -72,13 +72,13 @@ export default class FullHeader extends Component {
                                             icon={faArrowLeft}
                                         />
                                     ) : (
-                                        <a href="/template/main-page.html">
+                                        <Link to="/">
                                             <img
                                                 src={logo}
                                                 style={{ width: '140px' }}
                                                 alt=""
                                             />
-                                        </a>
+                                        </Link>
                                     )
                                 }
                             </MyContext.Consumer>

@@ -6,6 +6,8 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url(~@fullcalendar/core/main.css);
+@import url(~@fullcalendar/daygrid/main.css);
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -7749,44 +7751,34 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: rgba(255, 255, 255, 0.5); }
 
 /* ###### 3.15 Tooltip ###### */
-.tooltip {
-  top: 0; }
-
-.tooltip-inner {
+.tooltip-custom {
   font-size: 12px;
-  border-radius: 2px; }
+  top: 0;
+  padding: 2px 0;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 8px 16px 0px;
+  left: 0; }
+  .tooltip-custom div {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    min-width: calc(100% - 8px);
+    padding: 2px 8px;
+    margin: 2px 4px;
+    color: #4f5660;
+    min-height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px; }
+    .tooltip-custom div:hover {
+      color: #2e3338;
+      background-color: rgba(116, 127, 141, 0.08); }
 
-.tooltip-primary .tooltip-inner {
-  background-color: #3251cd;
-  color: #fff; }
-
-.tooltip-primary.bs-tooltip-top .arrow::before, .tooltip-primary.bs-tooltip-auto[x-placement^="top"] .arrow::before, .tooltip-primary.bs-tooltip-auto[x-placement^="top"] .arrow::before {
-  border-top-color: #3251cd; }
-
-.tooltip-primary.bs-tooltip-bottom .arrow::before, .tooltip-primary.bs-tooltip-auto[x-placement^="bottom"] .arrow::before, .tooltip-primary.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
-  border-bottom-color: #3251cd; }
-
-.tooltip-primary.bs-tooltip-left .arrow::before, .tooltip-primary.bs-tooltip-auto[x-placement^="left"] .arrow::before, .tooltip-primary.bs-tooltip-auto[x-placement^="left"] .arrow::before {
-  border-left-color: #3251cd; }
-
-.tooltip-primary.bs-tooltip-right .arrow::before, .tooltip-primary.bs-tooltip-auto[x-placement^="right"] .arrow::before, .tooltip-primary.bs-tooltip-auto[x-placement^="right"] .arrow::before {
-  border-right-color: #3251cd; }
-
-.tooltip-secondary .tooltip-inner {
-  background-color: #007bff;
-  color: #fff; }
-
-.tooltip-secondary.bs-tooltip-top .arrow::before, .tooltip-secondary.bs-tooltip-auto[x-placement^="top"] .arrow::before, .tooltip-secondary.bs-tooltip-auto[x-placement^="top"] .arrow::before {
-  border-top-color: #007bff; }
-
-.tooltip-secondary.bs-tooltip-bottom .arrow::before, .tooltip-secondary.bs-tooltip-auto[x-placement^="bottom"] .arrow::before, .tooltip-secondary.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
-  border-bottom-color: #007bff; }
-
-.tooltip-secondary.bs-tooltip-left .arrow::before, .tooltip-secondary.bs-tooltip-auto[x-placement^="left"] .arrow::before, .tooltip-secondary.bs-tooltip-auto[x-placement^="left"] .arrow::before {
-  border-left-color: #007bff; }
-
-.tooltip-secondary.bs-tooltip-right .arrow::before, .tooltip-secondary.bs-tooltip-auto[x-placement^="right"] .arrow::before, .tooltip-secondary.bs-tooltip-auto[x-placement^="right"] .arrow::before {
-  border-right-color: #007bff; }
+.btn-tooltip {
+  color: white;
+  cursor: pointer; }
 
 /* ############### CUSTOM VENDOR STYLES ############### */
 /* ###### 4.9 Perfect Scrollbar ###### */
@@ -8771,6 +8763,21 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* ############### PAGE LAYOUT STYLES ############### */
 /* ###### 6.1 Content  ###### */
+@media (max-width: 991.98px) {
+  .az-content-left-show .az-content-left {
+    width: 70vw;
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 800;
+    border-right: 1px solid #ced4da;
+    box-shadow: 0 0 3px rgba(33, 34, 41, 0.1);
+    overflow-y: auto; } }
+
 .content-padding {
   padding: 0; }
   @media (min-width: 992px) {
@@ -8913,6 +8920,8 @@ a.text-dark:hover, a.text-dark:focus {
 .az-header-left {
   display: flex;
   align-items: center; }
+  .az-header-left svg {
+    font-size: 20px; }
 
 .az-header-menu-icon {
   margin-right: 10px;
@@ -10014,11 +10023,12 @@ a.text-dark:hover, a.text-dark:focus {
   padding-bottom: 5px;
   flex-shrink: 0;
   flex-direction: row;
-  padding-left: 20px;
-  margin-bottom: 20px; }
-  @media (min-width: 992px) {
+  margin: 10px 0;
+  padding-left: 20px; }
+  @media (min-width: 768px) {
     .az-nav-line-chat {
-      padding-left: 0; } }
+      padding-left: 0;
+      margin-bottom: 20px; } }
   .az-nav-line-chat .nav-link {
     cursor: pointer;
     font-size: 13px;
@@ -10314,15 +10324,12 @@ a.text-dark:hover, a.text-dark:focus {
   .az-chat-header .nav-link {
     padding: 0;
     color: #ced4da;
-    font-size: 20px;
-    display: none; }
+    font-size: 20px; }
     .az-chat-header .nav-link:first-child {
       display: block; }
-    @media (min-width: 576px) {
+    @media (min-width: 992px) {
       .az-chat-header .nav-link {
-        display: block; }
-        .az-chat-header .nav-link:first-child {
-          display: none; } }
+        display: block; } }
     .az-chat-header .nav-link i {
       line-height: 0; }
     .az-chat-header .nav-link .typcn {
@@ -10342,20 +10349,36 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 0; }
   @media (max-width: 991.98px) {
     .az-content-left-invoice {
-      display: none; } }
+      position: absolute;
+      width: 40vw; } }
   @media (min-width: 992px) {
     .az-content-left-invoice {
       display: block;
       border-left: 1px solid #ced4da; } }
+  .az-content-left-invoice .invoice-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    @media (min-width: 992px) {
+      .az-content-left-invoice .invoice-header {
+        justify-content: flex-start; } }
+    .az-content-left-invoice .invoice-header svg {
+      font-size: 30px;
+      margin-left: 20px; }
+      @media (min-width: 992px) {
+        .az-content-left-invoice .invoice-header svg {
+          display: none; } }
   .az-content-left-invoice .az-content-breadcrumb,
   .az-content-left-invoice .az-content-title {
     padding-left: 20px;
+    padding-right: 20px;
     padding-top: 19px;
     margin-bottom: 20px; }
 
 .az-invoice-list {
   position: relative;
-  border-top: 1px solid #ced4da; }
+  border-top: 1px solid #ced4da;
+  height: 90%; }
   @media (min-width: 992px) {
     .az-invoice-list {
       height: calc(100% - 62px); } }
@@ -10398,7 +10421,10 @@ a.text-dark:hover, a.text-dark:focus {
       align-items: center;
       justify-content: space-between; }
       .az-invoice-list .media-body h6 span {
-        word-break: break-all; }
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100px; }
       .az-invoice-list .media-body h6 span:last-child {
         color: #3251cd; }
     .az-invoice-list .media-body p {
@@ -10426,13 +10452,9 @@ a.text-dark:hover, a.text-dark:focus {
 
 @media (max-width: 991.98px) {
   .az-content-body-show .az-content-body-contacts {
-    display: block;
-    position: relative; }
+    display: block; }
   .az-content-body-show .az-content-left-contacts {
-    position: absolute;
-    z-index: 10000;
-    top: 0;
-    left: 0; } }
+    display: none; } }
 
 .block-button {
   cursor: pointer; }
@@ -10543,16 +10565,15 @@ a.text-dark:hover, a.text-dark:focus {
   .az-contact-star.active {
     color: #ffc107; }
 
-.az-content-body-contacts {
-  display: none; }
-  @media (min-width: 768px) {
-    .az-content-body-contacts {
-      display: block;
-      overflow-y: auto;
-      flex: 1; } }
-  @media (min-width: 992px) {
-    .az-content-body-contacts {
-      overflow: visible; } }
+@media (min-width: 768px) {
+  .az-content-body-contacts {
+    display: block;
+    overflow-y: auto;
+    flex: 1; } }
+
+@media (min-width: 992px) {
+  .az-content-body-contacts {
+    overflow: visible; } }
 
 .az-contact-info-header {
   padding-top: 40px;
@@ -10634,6 +10655,9 @@ a.text-dark:hover, a.text-dark:focus {
           .az-contact-info-header .media-body .nav-link + .nav-link {
             margin-left: 25px; } }
 
+.chart {
+  max-width: 50vw; }
+
 .az-contact-info-body {
   position: relative;
   display: flex;
@@ -10644,9 +10668,14 @@ a.text-dark:hover, a.text-dark:focus {
     .az-contact-info-body {
       flex-direction: row;
       padding-left: 20px; } }
+  .az-contact-info-body .az-content-label {
+    color: red; }
   .az-contact-info-body .list-group {
     border-left: 1px solid #ced4da;
     width: 180px; }
+    @media (max-width: 767.98px) {
+      .az-contact-info-body .list-group {
+        border: none; } }
     .az-contact-info-body .list-group .list-group-item {
       border: none; }
   .az-contact-info-body .media-list {
@@ -10682,7 +10711,7 @@ a.text-dark:hover, a.text-dark:focus {
               bottom: -11px; } }
     .az-contact-info-body .media-list .az-profile-view-chart {
       position: relative;
-      width: 90%;
+      width: 96%;
       height: 200px; }
       .az-contact-info-body .media-list .az-profile-view-chart .az-profile-view-info {
         position: absolute;
@@ -10699,10 +10728,6 @@ a.text-dark:hover, a.text-dark:focus {
         .az-contact-info-body .media-list .az-profile-view-chart .az-profile-view-info p {
           font-size: 13px;
           margin-bottom: 0; }
-      @media (min-width: 375px) {
-        .az-contact-info-body .media-list .az-profile-view-chart {
-          width: 100%;
-          padding: 0 30px; } }
       @media (min-width: 576px) {
         .az-contact-info-body .media-list .az-profile-view-chart {
           height: 230px; } }
@@ -11222,6 +11247,21 @@ a.text-dark:hover, a.text-dark:focus {
     .profile-content {
       flex-direction: row; } }
 
+.scrollbar-profile {
+  height: 91%; }
+  @media (min-width: 992px) {
+    .scrollbar-profile {
+      height: 100%; } }
+
+.scrollbar-profile-posts {
+  height: 93% !important;
+  overflow: hidden !important; }
+  @media (max-width: 991.98px) {
+    .scrollbar-profile-posts {
+      overflow: visible !important; }
+      .scrollbar-profile-posts div:first-of-type {
+        position: relative !important; } }
+
 .az-content-left-profile {
   padding-right: 0;
   display: block;
@@ -11673,7 +11713,8 @@ a.text-dark:hover, a.text-dark:focus {
   align-items: center; }
 
 .sms {
-  padding: 10px; }
+  padding: 10px;
+  height: 100%; }
   @media (min-width: 992px) {
     .sms {
       padding: 10px 0 0 20px; } }

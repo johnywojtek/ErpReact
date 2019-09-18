@@ -28,7 +28,6 @@ export default function Participants() {
                     </a>
                 </nav>
                 <Scrollbars style={{ height: '89%' }}>
-                    <button className="content-toggler">></button>
                     <div id="azContactList" class="az-contacts-list">
                         <div class="az-contact-label">A</div>
                         <Contact />
@@ -39,7 +38,7 @@ export default function Participants() {
                     </div>
                 </Scrollbars>
             </div>
-            <Scrollbars style={{ height: '89%' }}>
+            <Scrollbars style={{ height: '99%' }}>
                 <div class="az-content-body-contacts">
                     <div class="az-contact-info-header">
                         <div class="media">
@@ -101,9 +100,9 @@ export default function Participants() {
                                 </a>
                             </nav>
 
-                            <div class="row mb-2">
+                            <div class="mb-2">
                                 <div class="az-profile-view-chart">
-                                    <Chart />
+                                    <Chart className="chart" />
                                     <div class="az-profile-view-info">
                                         <div class="d-flex align-items-baseline">
                                             <h6>508</h6>

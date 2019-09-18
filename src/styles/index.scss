@@ -10,7 +10,8 @@
 
 /* ############### BOOTSTRAP FRAMEWORK ############### */
 @import '../node_modules/bootstrap/scss/bootstrap';
-
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
 // Custom variables and mixins
 @import 'custom/variables';
 @import 'custom/mixins';

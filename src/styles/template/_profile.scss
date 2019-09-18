@@ -11,6 +11,23 @@
         flex-direction: row;
     }
 }
+.scrollbar-profile {
+    height: 91%;
+    @include media-breakpoint-up(lg) {
+        height: 100%;
+    }
+}
+.scrollbar-profile-posts {
+    height: 93% !important;
+    overflow: hidden !important;
+
+    @include media-breakpoint-down(md) {
+        overflow: visible !important;
+        div:first-of-type {
+            position: relative !important;
+        }
+    }
+}
 .az-content-left-profile {
     padding-right: 0;
     display: block;

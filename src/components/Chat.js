@@ -6,11 +6,14 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 import { FaVideo, FaRegFileAlt, FaPhone } from 'react-icons/fa';
 import MyContext from '../MyContext';
+import { IoMdMore } from 'react-icons/io';
+import { IoIosClose } from 'react-icons/io';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import User from './User';
 import axios from 'axios';
 import Loading from './Loading';
+import 'rc-tooltip/assets/bootstrap_white.css';
 
 import {
     faCamera,
@@ -24,9 +27,17 @@ import ActiveContacts from './ActiveContacts';
 import classNames from 'classnames';
 
 export default class Chat extends Component {
-    state = { users: [], loading: true, view: 'users', toggleChat: false };
+    constructor(props) {
+        super(props);
+        this.state = {
+            users: [],
+            loading: true,
+            view: 'users',
+            toggleChat: false
+        };
+    }
     componentDidMount() {
-        this.setState({ loading: true });
+        this.setState({ loading: true, toggleFile: false });
         axios
             .get('https://randomuser.me/api/', {
                 params: {
@@ -38,14 +49,26 @@ export default class Chat extends Component {
             );
     }
 
+    onTooltipClick = () => {
+        this.setState(prevState => ({
+            toggleFile: !prevState.toggleFile
+        }));
+    };
+
     render() {
         return (
             <MyContext.Consumer>
                 {context => (
                     <div
-                        className={classNames('content-chat', {
-                            'az-content-body-show': context.state.toggleChat
-                        })}
+                        className={classNames(
+                            'content-chat ',
+                            {
+                                'az-content-body-show': context.state.toggleChat
+                            },
+                            {
+                                'az-content-left-show': this.state.toggleFile
+                            }
+                        )}
                     >
                         <div className="az-content-left az-content-left-chat">
                             <nav className="nav az-nav-line az-nav-line-chat">
@@ -122,24 +145,16 @@ export default class Chat extends Component {
                                 </div>
                                 <nav className="nav">
                                     <a href="" className="nav-link">
-                                        <i className="icon ion-md-more"></i>
-                                    </a>
-                                    <a
-                                        href=""
-                                        className="nav-link"
-                                        data-toggle="tooltip"
-                                        title="Start Voice Call"
-                                    >
                                         <FaPhone />
                                     </a>
-                                    <a
-                                        href=""
-                                        className="nav-link"
-                                        data-toggle="tooltip"
-                                        title="Start Video Call"
-                                    >
+                                    <a href="" className="nav-link">
                                         <FaVideo />
                                     </a>
+                                    <span className="nav-link">
+                                        <FaRegFileAlt
+                                            onClick={this.onTooltipClick}
+                                        />
+                                    </span>
                                 </nav>
                             </div>
                             <Scrollbars style={{ height: '81%' }}>
@@ -382,7 +397,13 @@ export default class Chat extends Component {
                         </div>
 
                         <div className="az-content-left az-content-left-invoice">
-                            <h2 className="az-content-title">Shared Files</h2>
+                            <div className="invoice-header">
+                                <IoIosClose onClick={this.onTooltipClick} />
+
+                                <h2 className="az-content-title">
+                                    Shared Files
+                                </h2>
+                            </div>
                             <div id="azInvoiceList" className="az-invoice-list">
                                 <Scrollbars style={{ height: '96%' }}>
                                     <div className="media">

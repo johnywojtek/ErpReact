@@ -10,7 +10,7 @@ export default class User extends React.Component {
         this.state = { activeIndex: 0 };
     }
 
-    handleClick(index, props) {
+    handleClick(index) {
         this.setState({ activeIndex: index });
     }
 
@@ -28,14 +28,10 @@ export default class User extends React.Component {
                                 <div
                                     className={className}
                                     key={index}
-                                    onClick={
-                                        (this.handleClick.bind(
-                                            this,
-                                            index,
-                                            this.props
-                                        ),
-                                        context.toggleChat)
-                                    }
+                                    onClick={() => {
+                                        this.setState({ activeIndex: index });
+                                        return context.toggleChat();
+                                    }}
                                 >
                                     <div className="az-img-user">
                                         <img src={e.picture.medium} alt="" />
