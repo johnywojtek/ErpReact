@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "acb3c739a84e6a2e587b6e0efcc0d400",
+    "revision": "8a78731a7eaf4b15f9f39f4ac1aaa111",
     "url": "/ErpReact/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ErpReact/static/css/2.659ddf1d.chunk.css"
   },
   {
-    "revision": "8b83e0ac4f9b5023f6dd",
+    "revision": "0f6883cd4bd211db3506",
     "url": "/ErpReact/static/css/main.14a28586.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ErpReact/static/js/2.6abd0c2a.chunk.js"
   },
   {
-    "revision": "8b83e0ac4f9b5023f6dd",
-    "url": "/ErpReact/static/js/main.e8a353bf.chunk.js"
+    "revision": "0f6883cd4bd211db3506",
+    "url": "/ErpReact/static/js/main.6d0be7b9.chunk.js"
   },
   {
     "revision": "a07dcba5b82a951c541f",
