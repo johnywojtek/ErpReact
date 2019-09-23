@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { CirclePicker } from 'react-color';
-
+import classNames from 'classnames';
+import { TiArrowLeft } from 'react-icons/ti';
 class Role extends Component {
     state = { color: '#607d8b' };
 
@@ -18,14 +19,24 @@ class Role extends Component {
 }
 
 export default class Roles extends Component {
-    state = { value: 'choose role to edit', color: '#607d8b' };
+    state = {
+        value: 'choose role to edit',
+        color: '#607d8b',
+        toggleEdit: false
+    };
 
     onRoleClick = e => {
+        this.setState({ toggleEdit: true });
+
         this.setState({
             value: e.currentTarget.textContent
         });
     };
-
+    onArrowClick = () => {
+        this.setState(prevState => ({
+            toggleEdit: !prevState.toggleEdit
+        }));
+    };
     onColorChange = color => {
         this.setState({
             color: color.hex
@@ -33,9 +44,13 @@ export default class Roles extends Component {
     };
     render() {
         return (
-            <div class="roles-body">
-                <div class="az-content-left show-roles">
-                    <div className="add-role">
+            <div
+                className={classNames('roles-body', {
+                    'show-edit': this.state.toggleEdit
+                })}
+            >
+                <div class="add-role">
+                    <div className="role-heading">
                         <h2 className="mb-0">Roles</h2>
                         <div className="btn btn-outline-success">
                             Add Role +
@@ -43,6 +58,7 @@ export default class Roles extends Component {
                     </div>
                     <ul class="list-group">
                         <li
+                            data="sosadw"
                             class="list-group-item"
                             style={{ color: this.state.color }}
                             onClick={this.onRoleClick}
@@ -106,7 +122,11 @@ export default class Roles extends Component {
                         <div class="modal-body">
                             <form>
                                 <div class="form-group">
-                                    <h4 className="my-4">Change name</h4>
+                                    <TiArrowLeft
+                                        className="arrow-emial"
+                                        onClick={this.onArrowClick}
+                                    />
+                                    <h4 className="my-3">Change name</h4>
                                     <input
                                         type="text"
                                         class="form-control mt-2"
@@ -151,6 +171,7 @@ export default class Roles extends Component {
 
                                 <div class="form-group">
                                     <h4 className="my-2">Delete name</h4>
+
                                     <button
                                         type="submit"
                                         class="btn btn-danger"
@@ -158,6 +179,10 @@ export default class Roles extends Component {
                                         Delete
                                     </button>
                                 </div>
+
+                                <button type="submit" class="btn btn-success ">
+                                    Save
+                                </button>
                             </form>
                         </div>
                     </div>

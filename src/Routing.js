@@ -9,23 +9,24 @@ import {
 import MyContext from './MyContext';
 import Sidebar from './components/Sidebar';
 import MainPage from './components/mainPage/MainPage';
-import MainHeader from './components/MainHeader';
+import MainHeader from './components/header/MainHeader';
 import classNames from 'classnames';
-import Participants from './components/Participants';
+import Participants from './components/participants/Participants';
 import Email from './components/Email';
 import Signin from './components/Signin';
-import FullHeader from './components/FullHeader';
+import FullWidthHeader from './components/header/FullWidthHeader';
 import Signup from './components/Signup';
 import Notification from './components/Notification';
 import Profile from './components/Profile';
-import Chat from './components/Chat';
-import AccEdit from './components/AccEdit';
+import Chat from './components/chat/Chat';
 import AccSettings from './components/AccSettings';
-import Calendar from './components/Calendar';
+import Calendar from './components/calendar/Calendar';
 import Roles from './components/Roles';
 import Disks from './components/Disks';
 import Sms from './components/Sms';
 import Info from './components/Info';
+import VideoChat from './components/VideoChat';
+import VoiceChat from './components/VoiceChat';
 
 const routes = [
     {
@@ -34,10 +35,6 @@ const routes = [
         main: () => <MainPage />
     },
 
-    {
-        path: '/main/accEdit',
-        main: () => <AccEdit />
-    },
     {
         path: '/main/accSettings',
         main: () => <AccSettings />
@@ -69,6 +66,18 @@ const routes = [
     {
         path: '/main/info',
         main: () => <Info />
+    },
+    {
+        path: '/main/account-settings',
+        main: () => <AccSettings />
+    },
+    {
+        path: '/main/voiceChat',
+        main: () => <VoiceChat />
+    },
+    {
+        path: '/main/videoChat',
+        main: () => <VideoChat />
     }
 ];
 
@@ -140,10 +149,11 @@ class Headers extends React.Component {
             <MyProvider>
                 <Router>
                     <div className="content-full">
-                        <FullHeader />
+                        <FullWidthHeader />
                         <Switch>
                             <Route path="/head/chat" component={Chat} />
                             <Route path="/head/profile" component={Profile} />
+
                             <Route
                                 path="/head/notification"
                                 component={Notification}

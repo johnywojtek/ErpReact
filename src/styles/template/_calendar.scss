@@ -3,15 +3,11 @@
 .az-content-calendar {
 
   @include media-breakpoint-up(lg) {
-    padding: 25px 0;
+    padding: 25px 20px;
+    display: flex;
   }
 
-  .container,
-  .container-fluid {
-    padding: 10px 0 0 20px;
-
-
-  }
+  
 }
 
 

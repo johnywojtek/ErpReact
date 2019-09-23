@@ -4,6 +4,7 @@ import { IoMdClose, IoIosSettings } from 'react-icons/io';
 import { FaPhone, FaVideo } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 import {
     faCamera,
@@ -37,12 +38,12 @@ export default class FastChat extends Component {
                         <h6>Reynante Labares</h6>
                     </div>
                     <nav class="nav">
-                        <a href="" class="nav-link">
+                        <Link class="nav-link" to="/main/voiceChat">
                             <FaPhone />
-                        </a>
-                        <a href="" class="nav-link">
+                        </Link>
+                        <Link class="nav-link" to="/main/videoChat">
                             <FaVideo />
-                        </a>
+                        </Link>
                         <a href="" class="nav-link">
                             <IoIosSettings />
                         </a>

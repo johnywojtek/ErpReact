@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../img/neur.jpg';
-import MyContext from '../MyContext';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
@@ -15,7 +14,7 @@ import { faComments, faBell } from '@fortawesome/free-regular-svg-icons';
 
 import classNames from 'classnames';
 
-export default class FullHeader extends Component {
+export default class MainHeader extends Component {
     constructor(props) {
         super(props);
 
@@ -35,6 +34,8 @@ export default class FullHeader extends Component {
     };
 
     onAvatarClick = () => {
+        console.log('hi');
+
         this.setState({ showAvatar: this.state.showAvatar ? false : true });
     };
 
@@ -55,7 +56,7 @@ export default class FullHeader extends Component {
     };
 
     onSidebarButtonClick = () => {
-        console.log('siema');
+        this.props.onBtnClick(true);
     };
 
     render() {
@@ -64,24 +65,16 @@ export default class FullHeader extends Component {
                 <div className="az-header">
                     <div className="container-fluid">
                         <div className="az-header-left">
-                            <MyContext.Consumer>
-                                {context =>
-                                    context.state.toggleChat ? (
-                                        <FontAwesomeIcon
-                                            onClick={context.toggleChat}
-                                            icon={faArrowLeft}
-                                        />
-                                    ) : (
-                                        <Link to="/">
-                                            <img
-                                                src={logo}
-                                                style={{ width: '140px' }}
-                                                alt=""
-                                            />
-                                        </Link>
-                                    )
-                                }
-                            </MyContext.Consumer>
+                            <div
+                                onClick={this.onSidebarButtonClick}
+                                id="azSidebarToggle"
+                                className="az-header-menu-icon d-lg-none d-flex"
+                            >
+                                <span />
+                            </div>
+                            <a id="azChatBodyHide" className="az-header-arrow">
+                                <i className="icon ion-md-arrow-back" />
+                            </a>
                         </div>
                         <div className="az-header-center">
                             <input
@@ -254,21 +247,36 @@ export default class FullHeader extends Component {
                                     <Link
                                         to="/head/profile"
                                         className="dropdown-item"
+                                        onClick={() =>
+                                            this.setState({
+                                                showAvatar: false
+                                            })
+                                        }
                                     >
                                         <FontAwesomeIcon icon={faUser} /> My
                                         Profile
                                     </Link>
-                                    <a
-                                        href="/main/accSettings"
+                                    <Link
+                                        to="/main/account-settings"
                                         className="dropdown-item"
+                                        onClick={() =>
+                                            this.setState({
+                                                showAvatar: false
+                                            })
+                                        }
                                     >
                                         <FontAwesomeIcon icon={faEdit} /> Edit
                                         Profile Account
-                                    </a>
+                                    </Link>
 
                                     <Link
                                         to="/signin"
                                         className="dropdown-item"
+                                        onClick={() =>
+                                            this.setState({
+                                                showAvatar: false
+                                            })
+                                        }
                                     >
                                         <FontAwesomeIcon icon={faPowerOff} />{' '}
                                         Sign Out

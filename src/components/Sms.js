@@ -120,13 +120,16 @@ export default class Sms extends Component {
                                             <Checkbox text="Powtarzaj wysyłkę:" />
 
                                             <div className="message-time-repeat">
-                                                Wyślij łącznie{' '}
-                                                <input type="text" />{' '}
-                                                wiadomości. Jedna wiadomość co{' '}
+                                                Wyślij łącznie
+                                                <input
+                                                    type="text"
+                                                    className="sms-select"
+                                                />
+                                                wiadomości. Jedna wiadomość co
                                                 <select
                                                     id="form_need"
                                                     name="need"
-                                                    class="form-control"
+                                                    class="form-control sms-select"
                                                     data-error="Please specify your need."
                                                 >
                                                     <option value="1" selected>
@@ -143,35 +146,48 @@ export default class Sms extends Component {
                                                     <option value="10">
                                                         10
                                                     </option>
-                                                    <option value="8">8</option>
-                                                    <option value="8">8</option>
-                                                    <option value="8">8</option>
-                                                    <option value="8">8</option>
-                                                    <option value="8">8</option>
-                                                    <option value="8">8</option>
-                                                    <option value="8">8</option>
-                                                    <option value="8">8</option>
-                                                    <option value="8">8</option>
+                                                    <option value="11">
+                                                        11
+                                                    </option>
+                                                    <option value="12">
+                                                        12
+                                                    </option>
+                                                    <option value="13">
+                                                        13
+                                                    </option>
+                                                    <option value="14">
+                                                        14
+                                                    </option>
+                                                    <option value="15">
+                                                        15
+                                                    </option>
+                                                    <option value="16">
+                                                        16
+                                                    </option>
+                                                    <option value="17">
+                                                        17
+                                                    </option>
+                                                    <option value="18">
+                                                        18
+                                                    </option>
+                                                    <option value="19">
+                                                        19
+                                                    </option>
                                                 </select>
                                                 <select
                                                     id="form_need"
                                                     name="need"
-                                                    class="form-control"
+                                                    class="form-control sms-select"
                                                     data-error="Please specify your need."
                                                 >
-                                                    <option value=""></option>
-                                                    <option value="Request quotation">
-                                                        Request quotation
+                                                    <option value="dni">
+                                                        days
                                                     </option>
-                                                    <option value="Request order status">
-                                                        Request order status
+                                                    <option value="tygodni">
+                                                        weeks
                                                     </option>
-                                                    <option value="Request copy of an invoice">
-                                                        Request copy of an
-                                                        invoice
-                                                    </option>
-                                                    <option value="Other">
-                                                        Other
+                                                    <option value="miesięcy">
+                                                        months
                                                     </option>
                                                 </select>
                                             </div>

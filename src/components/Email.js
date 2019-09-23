@@ -22,7 +22,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 export default class Email extends React.Component {
     state = { view: false, compose: false };
-    onArrowClick = () => {
+    toggleInbox = () => {
         this.setState(prevState => ({
             view: !prevState.view
         }));
@@ -52,16 +52,12 @@ export default class Email extends React.Component {
     };
     render() {
         return (
-            <div className="az-content-body content-padding">
-                <div
-                    className={classNames('az-content-left-mail', {
-                        'd-block': this.state.view
-                    })}
-                >
-                    <TiArrowRight
-                        onClick={this.onArrowClick}
-                        className="arrow-emial"
-                    />
+            <div
+                className={classNames('az-content-body content-padding', {
+                    'inbox-show': this.state.view
+                })}
+            >
+                <div className="az-content-left-mail">
                     <a
                         onClick={this.onButtonClick}
                         id="btnCompose"
@@ -73,48 +69,60 @@ export default class Email extends React.Component {
                     <Scrollbars style={{ height: '91%' }}>
                         <div className="az-mail-menu">
                             <nav className="nav az-nav-column">
-                                <a href="" className="nav-link active">
+                                <a
+                                    onClick={this.toggleInbox}
+                                    className="nav-link active"
+                                >
                                     <TiMail className="typcn" /> Inbox
                                     <span>20</span>
                                 </a>
-                                <a href="" className="nav-link active">
+                                <a
+                                    onClick={this.toggleInbox}
+                                    className="nav-link active"
+                                >
                                     <TiMail /> Inbox
                                     <span>20</span>
                                 </a>
-                                <a href="" className="nav-link active">
-                                    <TiMail /> Inbox
-                                    <span>20</span>
-                                </a>
-                                <a href="" className="nav-link active">
-                                    <TiMail /> Inbox
-                                    <span>20</span>
-                                </a>
-                                <a href="" className="nav-link active">
-                                    <TiMail /> Inbox
-                                    <span>20</span>
-                                </a>
-                                <a href="" className="nav-link">
+                                <a
+                                    onClick={this.toggleInbox}
+                                    className="nav-link"
+                                >
                                     <TiStarOutline /> Starred
                                     <span>3</span>
                                 </a>
-                                <a href="" className="nav-link">
+                                <a
+                                    onClick={this.toggleInbox}
+                                    className="nav-link"
+                                >
                                     <TiBookmark /> Important
                                     <span>10</span>
                                 </a>
-                                <a href="" className="nav-link">
+                                <a
+                                    onClick={this.toggleInbox}
+                                    className="nav-link"
+                                >
                                     <TiArrowForwardOutline />
                                     Sent Mail
                                     <span>8</span>
                                 </a>
-                                <a href="" className="nav-link">
+                                <a
+                                    onClick={this.toggleInbox}
+                                    className="nav-link"
+                                >
                                     <TiPen /> Drafts
                                     <span>15</span>
                                 </a>
-                                <a href="" className="nav-link">
+                                <a
+                                    onClick={this.toggleInbox}
+                                    className="nav-link"
+                                >
                                     <TiCancelOutline /> Spam
                                     <span>128</span>
                                 </a>
-                                <a href="" className="nav-link">
+                                <a
+                                    onClick={this.toggleInbox}
+                                    className="nav-link"
+                                >
                                     <TiTrash /> Trash
                                     <span>6</span>
                                 </a>
@@ -159,17 +167,13 @@ export default class Email extends React.Component {
                         </div>
                     </Scrollbars>
                 </div>
-                <div
-                    className={classNames('az-content-body-mail', {
-                        'd-none': this.state.view
-                    })}
-                >
+                <div className={classNames('az-content-body-mail')}>
+                    <TiArrowLeft
+                        onClick={this.toggleInbox}
+                        className="arrow-emial"
+                    />
                     <div className="az-mail-header">
                         <div>
-                            <TiArrowLeft
-                                onClick={this.onArrowClick}
-                                className="arrow-emial"
-                            />
                             <div>
                                 <h4>Inbox</h4>
                                 <p>You have 2 unread messages</p>

@@ -4,7 +4,7 @@ import logo from '../img/neur.jpg';
 export default class Signup extends Component {
     render() {
         return (
-            <div class="az-signup-wrapper content-full">
+            <div class="az-signup-wrapper">
                 <div class="az-column-signup-left">
                     <div>
                         <div class="signup-logo">
@@ -32,10 +32,17 @@ export default class Signup extends Component {
                     </div>
                 </div>
                 <div class="az-column-signup">
-                    <img src="../img/neur.jpg" alt="" />
+                    <img
+                        src={logo}
+                        style={{
+                            width: '250px',
+                            marginBottom: '20px'
+                        }}
+                        alt=""
+                    />
 
                     <div class="az-signup-header">
-                        <h4>It's free to signup and only takes a minute.</h4>
+                        {/* <h4>It's free to signup and only takes a minute.</h4> */}
 
                         <form action="page-profile.html">
                             <div class="form-group">

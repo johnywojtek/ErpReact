@@ -1,4 +1,5 @@
 import React from 'react';
+import { Scrollbars } from 'react-custom-scrollbars';
 import {
     TiDevicePhone,
     TiEdit,
@@ -8,7 +9,7 @@ import {
     TiTrash,
     TiCameraOutline
 } from 'react-icons/ti';
-import { Scrollbars } from 'react-custom-scrollbars';
+
 import Chart from './Chart';
 import Contact from './Contact';
 

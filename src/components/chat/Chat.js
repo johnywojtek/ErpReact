@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
-import userGroup from '../img/user-group.png';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import classNames from 'classnames';
 import { Scrollbars } from 'react-custom-scrollbars';
 
-import { FaVideo, FaRegFileAlt, FaPhone } from 'react-icons/fa';
-import MyContext from '../MyContext';
-import { IoMdMore } from 'react-icons/io';
-import { IoIosClose } from 'react-icons/io';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import User from './User';
-import axios from 'axios';
-import Loading from './Loading';
-import 'rc-tooltip/assets/bootstrap_white.css';
-
-import {
-    faCamera,
-    faPaperclip,
-    faSmile,
-    faEllipsisV
-} from '@fortawesome/free-solid-svg-icons';
-import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
-import Slider from 'react-slick';
+import User from '../User';
+import Loading from '../Loading';
 import ActiveContacts from './ActiveContacts';
-import classNames from 'classnames';
+import MyContext from '../../MyContext';
+
+import { IoMdMore, IoIosClose } from 'react-icons/io';
+import {
+    FaCamera,
+    FaPaperclip,
+    FaSmile,
+    FaEllipsisV,
+    FaRegPaperPlane,
+    FaVideo,
+    FaRegFileAlt,
+    FaPhone
+} from 'react-icons/fa';
+
+import userGroup from '../../img/user-group.png';
+import 'rc-tooltip/assets/bootstrap_white.css';
 
 export default class Chat extends Component {
     constructor(props) {
@@ -144,12 +142,12 @@ export default class Chat extends Component {
                                     <small>Last seen: 2 minutes ago</small>
                                 </div>
                                 <nav className="nav">
-                                    <a href="" className="nav-link">
+                                    <Link class="nav-link" to="/main/voiceChat">
                                         <FaPhone />
-                                    </a>
-                                    <a href="" className="nav-link">
+                                    </Link>
+                                    <Link class="nav-link" to="/main/videoChat">
                                         <FaVideo />
-                                    </a>
+                                    </Link>
                                     <span className="nav-link">
                                         <FaRegFileAlt
                                             onClick={this.onTooltipClick}
@@ -157,6 +155,7 @@ export default class Chat extends Component {
                                     </span>
                                 </nav>
                             </div>
+
                             <Scrollbars style={{ height: '81%' }}>
                                 <div id="azChatBody" className="az-chat-body">
                                     <div className="content-inner">
@@ -363,7 +362,7 @@ export default class Chat extends Component {
                                         data-toggle="tooltip"
                                         title="Add Photo"
                                     >
-                                        <FontAwesomeIcon icon={faCamera} />
+                                        <FaCamera />
                                     </a>
                                     <a
                                         href=""
@@ -371,7 +370,7 @@ export default class Chat extends Component {
                                         data-toggle="tooltip"
                                         title="Attach a File"
                                     >
-                                        <FontAwesomeIcon icon={faPaperclip} />
+                                        <FaPaperclip />
                                     </a>
                                     <a
                                         href=""
@@ -379,10 +378,10 @@ export default class Chat extends Component {
                                         data-toggle="tooltip"
                                         title="Add Emoticons"
                                     >
-                                        <FontAwesomeIcon icon={faSmile} />
+                                        <FaSmile />
                                     </a>
                                     <a href="" class="nav-link">
-                                        <FontAwesomeIcon icon={faEllipsisV} />
+                                        <FaEllipsisV />
                                     </a>
                                 </nav>
                                 <input
@@ -391,7 +390,7 @@ export default class Chat extends Component {
                                     placeholder="Type your message here..."
                                 />
                                 <a href="" class="az-msg-send">
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <FaRegPaperPlane />
                                 </a>
                             </div>
                         </div>
