@@ -55,7 +55,7 @@ export default class VoiceChat extends Component {
 
                         <FaVideoSlash />
 
-                        <div className="btn btn-danger">ROZŁĄCZ</div>
+                        <div className="btn-disconect">ROZŁĄCZ</div>
                         <FaMicrophone />
                         <FaCog />
                     </div>

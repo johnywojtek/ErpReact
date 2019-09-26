@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MyContext from '../MyContext';
+
 
 // az-img-user online = true // green online circle
 // media new=true //red circle

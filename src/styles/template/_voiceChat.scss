@@ -1,6 +1,6 @@
 .voice-chat-wrapper {
     .voice-main {
-        height: 38vh;
+        height: 26vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -14,8 +14,8 @@
             .img-user {
                 display: block;
                 position: relative;
-                width: 130px;
-                height: 130px;
+                width: 100px;
+                height: 100px;
                 margin: 0 10px;
                 @include border-radius(100%);
 
@@ -37,8 +37,8 @@
                     position: absolute;
                     bottom: 0;
                     right: 5px;
-                    width: 50px;
-                    height: 50px;
+                    width: 40px;
+                    height: 40px;
                     background-color: red;
                     box-shadow: 0 0 0 2px rgba(#fff, 0.95);
                     @include border-radius(100%);
@@ -46,24 +46,45 @@
             }
         }
         .controles {
-            border: 1px solid $gray-400;
+            border: 1px solid #f6f6f7;
+            background-color: #f6f6f7;
             border-radius: 10px;
-            padding: 10px 20px;
-            display: inline-block;
+            padding: 6px 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             svg {
-                font-size: 25px;
+                font-size: 22px;
                 fill: $gray-700;
-                margin: 0 10px;
+                margin: 0 3px;
             }
-            .btn {
-                margin: 0 10px;
-                border-radius: 5px;
+            .btn-disconect {
+                height: 32px;
+                min-width: 60px;
+                min-height: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                background: none;
+                border: none;
+                border-radius: 3px;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 16px;
+                padding: 2px 16px;
+                user-select: none;
+                color: #fff;
+                background-color: #f04747;
+                margin-left: 12px;
+                margin-right: 12px;
+                text-transform: uppercase;
             }
         }
     }
     .voice-chat {
-        height: 52vh;
+        height: 65vh;
         border-top: 1px solid $gray-400;
 
         .az-chat-body {
