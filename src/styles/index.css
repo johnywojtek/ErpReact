@@ -6,8 +6,6 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url(~@fullcalendar/core/main.css);
-@import url(~@fullcalendar/daygrid/main.css);
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -8802,7 +8800,7 @@ a.text-dark:hover, a.text-dark:focus {
   flex: 1;
   background-color: #fff;
   display: flex;
-  height: 89vh; }
+  height: 91vh; }
 
 .az-content-title {
   color: #212229;
@@ -9422,7 +9420,7 @@ a.text-dark:hover, a.text-dark:focus {
     margin-top: 0; }
   .az-datepicker .ui-datepicker .ui-datepicker-title {
     color: #3251cd;
-    letter-spacing: -.2px; }
+    letter-spacing: -0.2px; }
   .az-datepicker .ui-datepicker .ui-datepicker-calendar {
     width: 100%; }
     .az-datepicker .ui-datepicker .ui-datepicker-calendar th {
@@ -9456,19 +9454,17 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 12px;
   color: #70737c;
   border-top: 1px solid #dee2e6; }
-  .az-nav-calendar-event .add-mail i {
-    font-size: 15px !important;
-    padding-top: 2px;
+  .az-nav-calendar-event .add-mail svg {
     color: #70737c; }
 
 .az-nav-calendar-event .nav-link {
   font-size: 13px;
   position: relative; }
-  .az-nav-calendar-event .nav-link i {
+  .az-nav-calendar-event .nav-link svg {
     font-size: 20px;
     position: relative;
     margin-right: 10px;
-    top: -.5px; }
+    top: -0.5px; }
   .az-nav-calendar-event .nav-link.exclude {
     color: #70737c; }
     .az-nav-calendar-event .nav-link.exclude i {
@@ -9518,6 +9514,8 @@ a.text-dark:hover, a.text-dark:focus {
       @media (min-width: 576px) {
         .az-calendar .fc-header-toolbar h2 {
           font-size: 22px; } }
+    .az-calendar .fc-header-toolbar .fc-left {
+      display: flex; }
     .az-calendar .fc-header-toolbar .fc-right {
       order: 3; }
     .az-calendar .fc-header-toolbar .fc-clear {
@@ -9530,6 +9528,7 @@ a.text-dark:hover, a.text-dark:focus {
         justify-content: center;
         margin-bottom: 20px; }
       .az-calendar .fc-header-toolbar .fc-left {
+        display: flex;
         order: 2;
         flex: 0 0 50%; }
       .az-calendar .fc-header-toolbar .fc-right {
@@ -9616,7 +9615,7 @@ a.text-dark:hover, a.text-dark:focus {
       @media (min-width: 992px) {
         .az-calendar .fc-icon-left-single-arrow::after,
         .az-calendar .fc-icon-right-single-arrow::after {
-          line-height: .75; } }
+          line-height: 0.75; } }
   .az-calendar .fc-icon-left-single-arrow::after {
     content: '\f3cf'; }
   .az-calendar .fc-icon-right-single-arrow::after {
@@ -9757,7 +9756,7 @@ a.text-dark:hover, a.text-dark:focus {
     .az-calendar .fc-view.fc-listMonth-view .fc-list-item, .az-calendar .fc-view.fc-listWeek-view .fc-list-item {
       flex: 0 0 calc(80% - 5px);
       max-width: calc(80% - 5px);
-      dispLay: flex;
+      display: flex;
       flex-direction: column;
       border-left: 4px solid transparent;
       background-color: #fff;
@@ -9911,7 +9910,7 @@ a.text-dark:hover, a.text-dark:focus {
     font-size: 32px;
     line-height: 0;
     margin-right: 10px;
-    opacity: .5; }
+    opacity: 0.5; }
 
 .az-modal-calendar-schedule .select2-container {
   width: 100% !important; }
@@ -9998,7 +9997,7 @@ a.text-dark:hover, a.text-dark:focus {
   @media (min-width: 992px) {
     .content-chat {
       padding-left: 20px;
-      padding-top: 25px; } }
+      padding-top: px; } }
 
 .az-content-left-chat {
   width: 100%;
@@ -11877,10 +11876,86 @@ a.text-dark:hover, a.text-dark:focus {
       text-transform: uppercase; }
 
 .voice-chat-wrapper .voice-chat {
-  height: 65vh;
+  height: 59vh;
   border-top: 1px solid #ced4da; }
-  .voice-chat-wrapper .voice-chat .az-chat-body {
-    padding: 0 100px; }
+
+.video-chat-wrapper .video-main {
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+  .video-chat-wrapper .video-main .users {
+    display: flex;
+    flex-direction: column;
+    margin-right: 60px;
+    margin-top: 30px;
+    margin-left: auto; }
+    .video-chat-wrapper .video-main .users .img-user {
+      display: block;
+      position: relative;
+      width: 52px;
+      height: 52px;
+      margin: 0 10px;
+      margin: 4px 0; }
+      .video-chat-wrapper .video-main .users .img-user img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px; }
+    .video-chat-wrapper .video-main .users .muted {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.95);
+      border-radius: 100%; }
+      .video-chat-wrapper .video-main .users .muted svg {
+        font-size: 18px;
+        fill: #fff; }
+
+.video-chat-wrapper .controles {
+  border: 1px solid #f6f6f7;
+  background-color: #f6f6f7;
+  border-radius: 10px;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; }
+  .video-chat-wrapper .controles svg {
+    font-size: 22px;
+    fill: #494c57;
+    margin: 0 3px; }
+  .video-chat-wrapper .controles .btn-disconect {
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    user-select: none;
+    color: #fff;
+    background-color: #f04747;
+    margin-left: 12px;
+    margin-right: 12px;
+    text-transform: uppercase; }
+
+.video-chat-wrapper .voice-chat {
+  height: 40vh;
+  border-top: 1px solid #ced4da; }
 
 .small-chat {
   position: absolute;

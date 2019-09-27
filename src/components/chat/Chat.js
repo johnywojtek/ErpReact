@@ -156,7 +156,7 @@ export default class Chat extends Component {
                                 </nav>
                             </div>
 
-                            <Scrollbars style={{ height: '81%' }}>
+                            <Scrollbars style={{ height: '100%' }}>
                                 <div id="azChatBody" className="az-chat-body">
                                     <div className="content-inner">
                                         <label className="az-chat-time">
@@ -411,7 +411,7 @@ export default class Chat extends Component {
                                         </div>
                                         <div className="media-body">
                                             <h6>
-                                                <span>Somethink.pdf</span>
+                                                <span>Something.pdf</span>
                                                 <p>
                                                     <span>Date:</span> Oct 25
                                                 </p>
@@ -424,7 +424,7 @@ export default class Chat extends Component {
                                         </div>
                                         <div className="media-body">
                                             <h6>
-                                                <span>Somethink.pdf</span>
+                                                <span>Something.pdf</span>
                                                 <p>
                                                     <span>Date:</span> Oct 25
                                                 </p>
@@ -437,7 +437,7 @@ export default class Chat extends Component {
                                         </div>
                                         <div className="media-body">
                                             <h6>
-                                                <span>Somethink.pdf</span>
+                                                <span>Something.pdf</span>
                                                 <p>
                                                     <span>Date:</span> Oct 25
                                                 </p>
@@ -450,7 +450,7 @@ export default class Chat extends Component {
                                         </div>
                                         <div className="media-body">
                                             <h6>
-                                                <span>Somethink.pdf</span>
+                                                <span>Something.pdf</span>
                                                 <p>
                                                     <span>Date:</span> Oct 25
                                                 </p>

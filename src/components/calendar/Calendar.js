@@ -9,16 +9,13 @@ import interactionPlugin from '@fullcalendar/interaction'; // needed for dayClic
 import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 import '@fullcalendar/timegrid/main.css';
+import { IoIosCalendar, IoMdAdd } from 'react-icons/io';
 
 export default class Calendar extends React.Component {
     calendarComponentRef = React.createRef();
 
     state = {
-        calendarWeekends: true,
-        calendarEvents: [
-            // initial event data
-            { title: 'Event Now', start: new Date() }
-        ]
+        calendarWeekends: true
     };
 
     render() {
@@ -39,21 +36,20 @@ export default class Calendar extends React.Component {
                         <label class="az-content-label">Event List</label>
                         <nav class="nav az-nav-column az-nav-calendar-event">
                             <a href="" class="nav-link">
-                                <i class="icon ion-ios-calendar "></i>
+                                <IoIosCalendar />
                                 <div>Smart Oak Project</div>
                             </a>
                             <a href="" class="nav-link">
-                                <i class="icon ion-ios-calendar "></i>
+                                <IoIosCalendar />
                                 <div>NeuroN Foundation</div>
                             </a>
                             <a href="" class="nav-link">
-                                <i class="icon ion-ios-calendar "></i>
+                                <IoIosCalendar />
                                 <div>Oak Atlantis</div>
                             </a>
                             <li>
                                 <p class="nav-link add-mail">
-                                    <i class="fas fa-plus"></i> dodaj kolejnego
-                                    maila
+                                    <IoMdAdd /> dodaj kolejnego maila
                                 </p>
                             </li>
                         </nav>
@@ -91,12 +87,7 @@ export default class Calendar extends React.Component {
         if (alert('Would you like to add an event to ' + arg.dateStr + ' ?')) {
             this.setState({
                 // add new event data
-                calendarEvents: this.state.calendarEvents.concat({
-                    // creates a new array
-                    title: 'New Event',
-                    start: arg.date,
-                    allDay: arg.allDay
-                })
+                calendarEvents: azCalendarEvents
             });
         }
     };

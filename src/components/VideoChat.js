@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TiCancelOutline } from 'react-icons/ti';
-import { Scrollbars } from 'react-custom-scrollbars';
+
 import {
     FaMicrophoneSlash,
     FaMicrophone,
@@ -10,11 +10,23 @@ import {
     FaCog,
     FaDesktop
 } from 'react-icons/fa';
+import { Scrollbars } from 'react-custom-scrollbars';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import {
+    faCamera,
+    faPaperclip,
+    faSmile,
+    faEllipsisV
+} from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
+import Message from './mainPage/Message';
+
 export default class VideoChat extends Component {
     render() {
         return (
-            <div className="voice-chat-wrapper">
-                <div className="voice-main">
+            <div className="video-chat-wrapper">
+                <div className="video-main">
                     <div className="users">
                         <div className="img-user">
                             <div className="muted">
@@ -55,7 +67,7 @@ export default class VideoChat extends Component {
 
                         <FaVideoSlash />
 
-                        <div className="btn btn-danger">ROZŁĄCZ</div>
+                        <div className="btn-disconect">ROZŁĄCZ</div>
                         <FaMicrophone />
                         <FaCog />
                     </div>
@@ -67,191 +79,60 @@ export default class VideoChat extends Component {
                                 <label className="az-chat-time">
                                     <span>3 days ago</span>
                                 </label>
-                                <div className="media flex-row-reverse">
-                                    <div className="az-img-user online">
-                                        <img
-                                            src="https://via.placeholder.com/500x500"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="media-body">
-                                        <div className="az-msg-wrapper">
-                                            Nulla consequat massa quis enim.
-                                            Donec pede justo, fringilla vel...
-                                        </div>
-                                        <div className="az-msg-wrapper">
-                                            rhoncus ut, imperdiet a, venenatis
-                                            vitae, justo...
-                                        </div>
-                                        <div className="az-msg-wrapper p-0">
-                                            <img
-                                                src="https://via.placeholder.com/500x334"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div>
-                                            <span>9:48 am</span>{' '}
-                                            <a href="">
-                                                <i className="icon ion-android-more-horizontal"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="media">
-                                    <div className="az-img-user online">
-                                        <img
-                                            src="https://via.placeholder.com/500x500"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="media-body">
-                                        <div className="az-msg-wrapper">
-                                            Lorem ipsum dolor sit amet,
-                                            consectetuer adipiscing elit. Aenean
-                                            commodo ligula eget dolor.
-                                        </div>
-                                        <div>
-                                            <span>9:32 am</span>{' '}
-                                            <a href="">
-                                                <i className="icon ion-android-more-horizontal"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="media flex-row-reverse">
-                                    <div className="az-img-user online">
-                                        <img
-                                            src="https://via.placeholder.com/500x500"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="media-body">
-                                        <div className="az-msg-wrapper">
-                                            Nullam dictum felis eu pede mollis
-                                            pretium
-                                        </div>
-                                        <div>
-                                            <span>11:22 am</span>{' '}
-                                            <a href="">
-                                                <i className="icon ion-android-more-horizontal"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                <Message />
                                 <label className="az-chat-time">
                                     <span>Yesterday</span>
                                 </label>
-                                <div className="media">
-                                    <div className="az-img-user online">
-                                        <img
-                                            src="https://via.placeholder.com/500x500"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="media-body">
-                                        <div className="az-msg-wrapper">
-                                            Lorem ipsum dolor sit amet,
-                                            consectetuer adipiscing elit. Aenean
-                                            commodo ligula eget dolor.
-                                        </div>
-                                        <div>
-                                            <span>9:32 am</span>{' '}
-                                            <a href="">
-                                                <i className="icon ion-android-more-horizontal"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="media flex-row-reverse">
-                                    <div className="az-img-user online">
-                                        <img
-                                            src="https://via.placeholder.com/500x500"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="media-body">
-                                        <div className="az-msg-wrapper">
-                                            Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem.
-                                            Nulla consequat massa quis enim.
-                                            Donec pede justo, fringilla vel,
-                                            aliquet nec. In enim justo, rhoncus
-                                            ut, imperdiet a, venenatis vitae,
-                                            justo.
-                                        </div>
-                                        <div className="az-msg-wrapper">
-                                            Nullam dictum felis eu pede mollis
-                                            pretium
-                                        </div>
-                                        <div>
-                                            <span>9:48 am</span>{' '}
-                                            <a href="">
-                                                <i className="icon ion-android-more-horizontal"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <Message />
 
                                 <label className="az-chat-time">
                                     <span>Today</span>
                                 </label>
-                                <div className="media">
-                                    <div className="az-img-user online">
-                                        <img
-                                            src="https://via.placeholder.com/500x500"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="media-body">
-                                        <div className="az-msg-wrapper">
-                                            Maecenas tempus, tellus eget
-                                            condimentum rhoncus
-                                        </div>
-                                        <div className="az-msg-wrapper">
-                                            Nam quam nunc, blandit vel, luctus
-                                            pulvinar, hendrerit id, lorem.
-                                            Maecenas nec odio et ante tincidunt
-                                            tempus. Donec vitae sapien ut libero
-                                            venenatis faucibus.
-                                        </div>
-                                        <div>
-                                            <span>10:12 am</span>{' '}
-                                            <a href="">
-                                                <i className="icon ion-android-more-horizontal"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="media flex-row-reverse">
-                                    <div className="az-img-user online">
-                                        <img
-                                            src="https://via.placeholder.com/500x500"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="media-body">
-                                        <div className="az-msg-wrapper">
-                                            Maecenas tempus, tellus eget
-                                            condimentum rhoncus
-                                        </div>
-                                        <div className="az-msg-wrapper">
-                                            Nam quam nunc, blandit vel, luctus
-                                            pulvinar, hendrerit id, lorem.
-                                            Maecenas nec odio et ante tincidunt
-                                            tempus. Donec vitae sapien ut libero
-                                            venenatis faucibus.
-                                        </div>
-                                        <div>
-                                            <span>09:40 am</span>{' '}
-                                            <a href="">
-                                                <i className="icon ion-android-more-horizontal"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                <Message />
                             </div>
                         </div>
                     </Scrollbars>
+                    <div class="az-chat-footer-main">
+                        <nav class="nav">
+                            <a
+                                href=""
+                                class="nav-link"
+                                data-toggle="tooltip"
+                                title="Add Photo"
+                            >
+                                <FontAwesomeIcon icon={faCamera} />
+                            </a>
+                            <a
+                                href=""
+                                class="nav-link"
+                                data-toggle="tooltip"
+                                title="Attach a File"
+                            >
+                                <FontAwesomeIcon icon={faPaperclip} />
+                            </a>
+                            <a
+                                href=""
+                                class="nav-link"
+                                data-toggle="tooltip"
+                                title="Add Emoticons"
+                            >
+                                <FontAwesomeIcon icon={faSmile} />
+                            </a>
+                            <a href="" class="nav-link">
+                                <FontAwesomeIcon icon={faEllipsisV} />
+                            </a>
+                        </nav>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Type your message here..."
+                        />
+                        <a href="" class="az-msg-send">
+                            <FontAwesomeIcon icon={faPaperPlane} />
+                        </a>
+                    </div>
                 </div>
             </div>
         );
