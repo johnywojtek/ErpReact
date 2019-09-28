@@ -8761,7 +8761,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* ############### PAGE LAYOUT STYLES ############### */
 /* ###### 6.1 Content  ###### */
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
   .az-content-left-show .az-content-left {
     width: 70vw;
     height: 100%;
@@ -9014,7 +9014,7 @@ a.text-dark:hover, a.text-dark:focus {
     fill: #212229; }
 
 .az-header-message svg {
-  font-size: 20px; }
+  font-size: 24px; }
 
 .az-header-message .typcn:before {
   font-size: 2rem !important; }
@@ -9495,6 +9495,14 @@ a.text-dark:hover, a.text-dark:focus {
   .az-calendar th,
   .az-calendar thead {
     border-color: #dee2e6; }
+  @media (max-width: 1199.98px) {
+    .az-calendar .fc-view-container {
+      padding: 0 10px; } }
+  @media (max-width: 1199.98px) {
+    .az-calendar .fc-body {
+      padding: 0 25px;
+      border-left: 1px solid #ced4da;
+      border-right: 1px solid #ced4da; } }
   .az-calendar .fc-header-toolbar {
     display: flex;
     flex-wrap: wrap;
@@ -9529,12 +9537,9 @@ a.text-dark:hover, a.text-dark:focus {
         margin-bottom: 20px; }
       .az-calendar .fc-header-toolbar .fc-left {
         display: flex;
-        order: 2;
-        flex: 0 0 50%; }
+        order: 2; }
       .az-calendar .fc-header-toolbar .fc-right {
-        flex: 0 0 50%;
-        display: flex;
-        justify-content: flex-end; } }
+        display: flex; } }
     .az-calendar .fc-header-toolbar button {
       height: 38px;
       background-color: #fff;
@@ -9634,13 +9639,6 @@ a.text-dark:hover, a.text-dark:focus {
     .az-calendar .fc-view > table > thead th,
     .az-calendar .fc-view > table > thead td {
       border-color: #ced4da; }
-      @media (max-width: 991.98px) {
-        .az-calendar .fc-view > table > thead th:first-child,
-        .az-calendar .fc-view > table > thead td:first-child {
-          border-left-width: 0; }
-        .az-calendar .fc-view > table > thead th:last-child,
-        .az-calendar .fc-view > table > thead td:last-child {
-          border-right-width: 0; } }
     .az-calendar .fc-view > table > tbody > tr > td {
       border-color: #ced4da; }
       @media (max-width: 991.98px) {
@@ -9996,8 +9994,7 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 0; }
   @media (min-width: 992px) {
     .content-chat {
-      padding-left: 20px;
-      padding-top: px; } }
+      padding-left: 20px; } }
 
 .az-content-left-chat {
   width: 100%;
@@ -10161,29 +10158,27 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #dc3545;
   box-shadow: 0 0 0 2px #fff; }
 
-.az-chat-list .media-body {
-  margin-left: 15px; }
-  .az-chat-list .media-body p {
-    font-size: 13px;
-    margin-bottom: 0;
-    color: #70737c;
-    line-height: 1.35; }
+.az-chat-list .media-body p {
+  font-size: 13px;
+  margin-bottom: 0;
+  color: #70737c;
+  line-height: 1.35; }
 
 .az-chat-list .media-contact-name {
+  width: 90%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 2px; }
   .az-chat-list .media-contact-name span:first-child {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    display: block;
     font-size: 14px;
     font-weight: 500;
-    color: #212229; }
+    color: #212229;
+    width: 80%; }
   .az-chat-list .media-contact-name span:last-child {
-    display: block;
     font-size: 11px;
     color: #969dab; }
 
@@ -10343,28 +10338,24 @@ a.text-dark:hover, a.text-dark:focus {
   color: #007bff; }
 
 .az-content-left-invoice {
-  padding: 0; }
-  @media (max-width: 991.98px) {
+  padding: 0;
+  border-left: 1px solid #ced4da; }
+  @media (max-width: 1199.98px) {
     .az-content-left-invoice {
       position: absolute;
+      display: none;
       width: 40vw; } }
-  @media (min-width: 992px) {
-    .az-content-left-invoice {
-      display: block;
-      border-left: 1px solid #ced4da; } }
   .az-content-left-invoice .invoice-header {
     display: flex;
     align-items: center;
     justify-content: space-between; }
-    @media (min-width: 992px) {
-      .az-content-left-invoice .invoice-header {
-        justify-content: flex-start; } }
     .az-content-left-invoice .invoice-header svg {
       font-size: 30px;
-      margin-left: 20px; }
-      @media (min-width: 992px) {
+      margin-left: 20px;
+      display: none; }
+      @media (max-width: 1199.98px) {
         .az-content-left-invoice .invoice-header svg {
-          display: none; } }
+          display: block; } }
   .az-content-left-invoice .az-content-breadcrumb,
   .az-content-left-invoice .az-content-title {
     padding-left: 20px;
@@ -10832,7 +10823,7 @@ a.text-dark:hover, a.text-dark:focus {
   overflow: hidden; }
   @media (min-width: 992px) {
     .az-content-left-mail {
-      width: 220px;
+      width: 240px;
       border-right: 1px solid #ced4da;
       display: block; } }
   .az-content-left-mail .btn-compose {
@@ -11579,13 +11570,19 @@ a.text-dark:hover, a.text-dark:focus {
 .show-edit .add-role {
   display: none; }
 
+.arrow-roles {
+  font-size: 40px; }
+  @media (min-width: 768px) {
+    .arrow-roles {
+      display: none; } }
+
 .add-role {
   height: calc(100vh - 66px);
   width: 100vw;
   padding-top: 20px; }
   @media (min-width: 768px) {
     .add-role {
-      width: 17vw;
+      width: 38vw;
       border-right: 1px solid #969dab; } }
   .add-role li {
     border: none; }
@@ -11804,6 +11801,9 @@ a.text-dark:hover, a.text-dark:focus {
       .disks .disks-button:hover svg {
         fill: #3251cd; }
 
+.videoChat-footer {
+  border-top: 1px solid #ced4da; }
+
 .voice-chat-wrapper .voice-main {
   height: 26vh;
   display: flex;
@@ -11852,7 +11852,9 @@ a.text-dark:hover, a.text-dark:focus {
     .voice-chat-wrapper .voice-main .controles svg {
       font-size: 22px;
       fill: #494c57;
-      margin: 0 3px; }
+      margin: 0 5px; }
+      .voice-chat-wrapper .voice-main .controles svg:hover {
+        fill: #70737c; }
     .voice-chat-wrapper .voice-main .controles .btn-disconect {
       height: 32px;
       min-width: 60px;
@@ -11860,20 +11862,21 @@ a.text-dark:hover, a.text-dark:focus {
       display: flex;
       justify-content: center;
       align-items: center;
-      box-sizing: border-box;
-      background: none;
       border: none;
       border-radius: 3px;
       font-size: 14px;
       font-weight: 500;
       line-height: 16px;
       padding: 2px 16px;
-      user-select: none;
       color: #fff;
       background-color: #f04747;
-      margin-left: 12px;
-      margin-right: 12px;
-      text-transform: uppercase; }
+      margin-left: 6px;
+      margin-right: 6px;
+      text-transform: uppercase;
+      cursor: pointer; }
+      .voice-chat-wrapper .voice-main .controles .btn-disconect:hover {
+        color: #fff;
+        background-color: #e84444; }
 
 .voice-chat-wrapper .voice-chat {
   height: 59vh;
@@ -11930,7 +11933,9 @@ a.text-dark:hover, a.text-dark:focus {
   .video-chat-wrapper .controles svg {
     font-size: 22px;
     fill: #494c57;
-    margin: 0 3px; }
+    margin: 0 5px; }
+    .video-chat-wrapper .controles svg:hover {
+      fill: #70737c; }
   .video-chat-wrapper .controles .btn-disconect {
     height: 32px;
     min-width: 60px;
@@ -11938,20 +11943,21 @@ a.text-dark:hover, a.text-dark:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    background: none;
     border: none;
     border-radius: 3px;
     font-size: 14px;
     font-weight: 500;
     line-height: 16px;
     padding: 2px 16px;
-    user-select: none;
     color: #fff;
     background-color: #f04747;
-    margin-left: 12px;
-    margin-right: 12px;
-    text-transform: uppercase; }
+    margin-left: 6px;
+    margin-right: 6px;
+    text-transform: uppercase;
+    cursor: pointer; }
+    .video-chat-wrapper .controles .btn-disconect:hover {
+      color: #fff;
+      background-color: #e84444; }
 
 .video-chat-wrapper .voice-chat {
   height: 40vh;
@@ -12028,7 +12034,8 @@ a.text-dark:hover, a.text-dark:focus {
       margin: 0 10px;
       padding-left: 0;
       padding-right: 0;
-      border-width: 0; }
+      border-width: 0;
+      margin-top: 0.25rem; }
       .small-chat .small-chat-footer .form-control:hover, .small-chat .small-chat-footer .form-control:focus {
         box-shadow: none; }
 

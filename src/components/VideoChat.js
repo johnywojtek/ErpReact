@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import { TiCancelOutline } from 'react-icons/ti';
 
 import {
     FaMicrophoneSlash,
     FaMicrophone,
-    FaShareSquare,
     FaVideoSlash,
-    FaVideo,
     FaCog,
     FaDesktop
 } from 'react-icons/fa';
+
 import { Scrollbars } from 'react-custom-scrollbars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import {
+    FaPhone,
+    FaVideo,
+    FaCamera,
+    FaPaperclip,
+    FaSmile,
+    FaEllipsisV,
+    FaRegPaperPlane
+} from 'react-icons/fa';
 import {
     faCamera,
     faPaperclip,
@@ -63,13 +69,20 @@ export default class VideoChat extends Component {
                         </div>
                     </div>
                     <div className="controles">
-                        <FaDesktop />
+                        <a href="">
+                            <FaDesktop />
+                        </a>
+                        <a href="">
+                            <FaVideoSlash />
+                        </a>
 
-                        <FaVideoSlash />
-
-                        <div className="btn-disconect">ROZŁĄCZ</div>
-                        <FaMicrophone />
-                        <FaCog />
+                        <a className="btn-disconect">ROZŁĄCZ</a>
+                        <a href="">
+                            <FaMicrophone />
+                        </a>
+                        <a href="">
+                            <FaCog />
+                        </a>
                     </div>
                 </div>
                 <div className="voice-chat">
@@ -94,7 +107,7 @@ export default class VideoChat extends Component {
                             </div>
                         </div>
                     </Scrollbars>
-                    <div class="az-chat-footer-main">
+                    <div class="az-chat-footer-main videoChat-footer">
                         <nav class="nav">
                             <a
                                 href=""
@@ -102,7 +115,7 @@ export default class VideoChat extends Component {
                                 data-toggle="tooltip"
                                 title="Add Photo"
                             >
-                                <FontAwesomeIcon icon={faCamera} />
+                                <FaCamera />
                             </a>
                             <a
                                 href=""
@@ -110,7 +123,7 @@ export default class VideoChat extends Component {
                                 data-toggle="tooltip"
                                 title="Attach a File"
                             >
-                                <FontAwesomeIcon icon={faPaperclip} />
+                                <FaPaperclip />
                             </a>
                             <a
                                 href=""
@@ -118,19 +131,19 @@ export default class VideoChat extends Component {
                                 data-toggle="tooltip"
                                 title="Add Emoticons"
                             >
-                                <FontAwesomeIcon icon={faSmile} />
+                                <FaSmile />
                             </a>
                             <a href="" class="nav-link">
-                                <FontAwesomeIcon icon={faEllipsisV} />
+                                <FaEllipsisV />
                             </a>
                         </nav>
                         <input
                             type="text"
-                            class="form-control"
+                            class="form-control "
                             placeholder="Type your message here..."
                         />
                         <a href="" class="az-msg-send">
-                            <FontAwesomeIcon icon={faPaperPlane} />
+                            <FaRegPaperPlane />
                         </a>
                     </div>
                 </div>

@@ -30,56 +30,48 @@ const fromDB = [
     }
 ];
 
-export default class Message extends Component {
-    render() {
-        return fromDB.map(e => {
-            if (e.img.length > 0) {
-                return (
-                    <div class="media">
-                        <div class="az-img-user-post">
-                            {/* <img src=`https://via.placeholder.com/user/${fromDB.user}` alt="user" /> */}
-                            <img
-                                src="https://via.placeholder.com/500x500"
-                                alt=""
-                            />
+export default function Message() {
+    return fromDB.map(e => {
+        if (e.img.length) {
+            return (
+                <div class="media">
+                    <div class="az-img-user-post">
+                        {/* <img src=`https://via.placeholder.com/user/${fromDB.user}` alt="user" /> */}
+                        <img src="https://via.placeholder.com/500x500" alt="" />
+                    </div>
+                    <div class="media-body">
+                        <div class="msg-body">
+                            <div class="az-msg-wrapper p-0">
+                                <img src={e.img} alt="" />
+                            </div>
+                            <i class="fas fa-ellipsis-h " />
                         </div>
-                        <div class="media-body">
-                            <div class="msg-body">
-                                <div class="az-msg-wrapper p-0">
-                                    <img src={e.img} alt="" />
-                                </div>
-                                <i class="fas fa-ellipsis-h " />
-                            </div>
-                            <div>
-                                <span>{e.time}</span>
-                            </div>
+                        <div>
+                            <span>{e.time}</span>
                         </div>
                     </div>
-                );
-            } else {
-                return (
-                    <div class="media">
-                        <div class="az-img-user-post">
-                            {/* <img src="https://via.placeholder.com/user/{fromDB.user}" alt="user" /> */}
-                            <img
-                                src="https://via.placeholder.com/500x500"
-                                alt=""
-                            />
+                </div>
+            );
+        } else {
+            return (
+                <div class="media">
+                    <div class="az-img-user-post">
+                        {/* <img src="https://via.placeholder.com/user/{fromDB.user}" alt="user" /> */}
+                        <img src="https://via.placeholder.com/500x500" alt="" />
+                    </div>
+                    <div class="media-body">
+                        <div class="msg-body">
+                            <div class="az-msg-wrapper">
+                                <Linkify>{e.text}</Linkify>
+                            </div>
+                            <i class="fas fa-ellipsis-h " />
                         </div>
-                        <div class="media-body">
-                            <div class="msg-body">
-                                <div class="az-msg-wrapper">
-                                    <Linkify>{e.text}</Linkify>
-                                </div>
-                                <i class="fas fa-ellipsis-h " />
-                            </div>
-                            <div>
-                                <span>{e.time}</span>
-                            </div>
+                        <div>
+                            <span>{e.time}</span>
                         </div>
                     </div>
-                );
-            }
-        });
-    }
+                </div>
+            );
+        }
+    });
 }

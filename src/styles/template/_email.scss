@@ -29,7 +29,7 @@
     overflow: hidden;
 
     @include media-breakpoint-up(lg) {
-        width: 220px;
+        width: 240px;
         border-right: 1px solid $gray-400;
         display: block;
     }

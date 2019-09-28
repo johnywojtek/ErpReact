@@ -61,7 +61,10 @@
         svg {
             font-size: 22px;
             fill: $gray-700;
-            margin: 0 3px;
+            margin: 0 5px;
+            &:hover {
+                fill: $gray-600;
+            }
         }
         .btn-disconect {
             height: 32px;
@@ -70,20 +73,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-sizing: border-box;
-            background: none;
             border: none;
             border-radius: 3px;
             font-size: 14px;
             font-weight: 500;
             line-height: 16px;
             padding: 2px 16px;
-            user-select: none;
+
             color: #fff;
             background-color: #f04747;
-            margin-left: 12px;
-            margin-right: 12px;
+            margin-left: 6px;
+            margin-right: 6px;
             text-transform: uppercase;
+            cursor: pointer;
+            &:hover {
+                color: #fff;
+                background-color: #e84444;
+            }
         }
     }
 

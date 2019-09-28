@@ -29,8 +29,12 @@ export default class User extends React.Component {
                                     className={className}
                                     key={index}
                                     onClick={() => {
-                                        this.setState({ activeIndex: index });
-                                        return context.toggleChat();
+                                        this.setState({
+                                            activeIndex: index
+                                        });
+                                        if (window.innerWidth < 1000) {
+                                            return context.toggleChat();
+                                        }
                                     }}
                                 >
                                     <div className="az-img-user">

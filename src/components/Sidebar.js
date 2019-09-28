@@ -1,15 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from '../img/neur.jpg';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faAddressBook } from '@fortawesome/free-solid-svg-icons';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { CSSTransition } from 'react-transition-group';
 import { NavLink } from 'react-router-dom';
 
 import Collapse, { Panel } from '../es';
 import { Scrollbars } from 'react-custom-scrollbars';
-import { IoIosClose } from 'react-icons/io';
+
 import { FaRegFlag } from 'react-icons/fa';
 
 import {
@@ -19,13 +15,7 @@ import {
     TiPuzzleOutline
 } from 'react-icons/ti';
 
-//dodać przy zaciaganiu z db
-// onClick={() =>
-// this.props.onBtnClick(false)
-// }
-// na kazdy link
-
-class Sidebar extends React.Component {
+class Sidebar extends Component {
     state = {
         accordion: true,
         activeKey: []

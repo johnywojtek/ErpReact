@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FaFolder, FaVideo } from 'react-icons/fa';
+import { FaFolder } from 'react-icons/fa';
 import { Scrollbars } from 'react-custom-scrollbars';
 
 export default class Disks extends Component {

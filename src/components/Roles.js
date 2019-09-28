@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import { CirclePicker } from 'react-color';
 import classNames from 'classnames';
-import { TiArrowLeft } from 'react-icons/ti';
-class Role extends Component {
-    state = { color: '#607d8b' };
 
-    render() {
-        return (
-            <li
-                class="list-group-item"
-                style={{ color: this.state.color }}
-                onClick={this.onRoleClick}
-            >
-                {this.props.name}
-            </li>
-        );
-    }
+import { CirclePicker } from 'react-color';
+import { TiArrowLeft } from 'react-icons/ti';
+
+function Role(props) {
+    return (
+        <li
+            class="list-group-item"
+            style={{ color: '#ccc' }}
+            onClick={this.onRoleClick}
+        >
+            {props.name}
+        </li>
+    );
 }
 
 export default class Roles extends Component {
@@ -27,10 +25,7 @@ export default class Roles extends Component {
 
     onRoleClick = e => {
         this.setState({ toggleEdit: true });
-
-        this.setState({
-            value: e.currentTarget.textContent
-        });
+        this.setState({ value: e.currentTarget.textContent });
     };
     onArrowClick = () => {
         this.setState(prevState => ({
@@ -57,14 +52,6 @@ export default class Roles extends Component {
                         </div>
                     </div>
                     <ul class="list-group">
-                        <li
-                            data="sosadw"
-                            class="list-group-item"
-                            style={{ color: this.state.color }}
-                            onClick={this.onRoleClick}
-                        >
-                            King of Smart Oak
-                        </li>
                         <li
                             class="list-group-item"
                             style={{ color: this.state.color }}
@@ -123,7 +110,7 @@ export default class Roles extends Component {
                             <form>
                                 <div class="form-group">
                                     <TiArrowLeft
-                                        className="arrow-emial"
+                                        className="arrow-roles"
                                         onClick={this.onArrowClick}
                                     />
                                     <h4 className="my-3">Change name</h4>

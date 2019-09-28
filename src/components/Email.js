@@ -1,4 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
+import { Scrollbars } from 'react-custom-scrollbars';
+
 import {
     TiMail,
     TiStarOutline,
@@ -13,23 +16,26 @@ import {
     TiChevronRight,
     TiTag,
     TiArrowRight,
-    TiArrowLeft
+    TiArrowLeft,
+    TiPlus
 } from 'react-icons/ti';
 import { IoIosClose } from 'react-icons/io';
 
-import classNames from 'classnames';
-import { Scrollbars } from 'react-custom-scrollbars';
-
 export default class Email extends React.Component {
     state = { view: false, compose: false };
+
     toggleInbox = () => {
-        this.setState(prevState => ({
-            view: !prevState.view
-        }));
+        if (window.innerWidth < 1000) {
+            this.setState(prevState => ({
+                view: !prevState.view
+            }));
+        }
     };
+
     onButtonClick = () => {
         this.setState({ compose: true });
     };
+
     onCloseClick = () => {
         this.setState({ compose: false });
     };
@@ -160,8 +166,7 @@ export default class Email extends React.Component {
                                     lucasdabraowski@wp.com <span>173</span>
                                 </a>
                                 <a href="#" className="nav-link add-mail">
-                                    <i className="fas fa-plus"></i> dodaj
-                                    kolejnego maila
+                                    <TiPlus /> dodaj kolejnego maila
                                 </a>
                             </nav>
                         </div>

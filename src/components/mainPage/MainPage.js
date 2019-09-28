@@ -1,19 +1,19 @@
 import React from 'react';
 import axios from 'axios';
 import { Scrollbars } from 'react-custom-scrollbars';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import {
-    faCamera,
-    faPaperclip,
-    faSmile,
-    faEllipsisV
-} from '@fortawesome/free-solid-svg-icons';
-import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import Message from './Message';
 import User2 from '../User2';
 import FastChat from './FastChat';
 import Loading from '../Loading';
+
+import {
+    FaCamera,
+    FaPaperclip,
+    FaSmile,
+    FaEllipsisV,
+    FaRegPaperPlane
+} from 'react-icons/fa';
 
 export default class MainPage extends React.Component {
     state = { users: [], loading: true };
@@ -44,7 +44,7 @@ export default class MainPage extends React.Component {
                                     data-toggle="tooltip"
                                     title="Add Photo"
                                 >
-                                    <FontAwesomeIcon icon={faCamera} />
+                                    <FaCamera />
                                 </a>
                                 <a
                                     href=""
@@ -52,7 +52,7 @@ export default class MainPage extends React.Component {
                                     data-toggle="tooltip"
                                     title="Attach a File"
                                 >
-                                    <FontAwesomeIcon icon={faPaperclip} />
+                                    <FaPaperclip />
                                 </a>
                                 <a
                                     href=""
@@ -60,19 +60,19 @@ export default class MainPage extends React.Component {
                                     data-toggle="tooltip"
                                     title="Add Emoticons"
                                 >
-                                    <FontAwesomeIcon icon={faSmile} />
+                                    <FaSmile />
                                 </a>
                                 <a href="" class="nav-link">
-                                    <FontAwesomeIcon icon={faEllipsisV} />
+                                    <FaEllipsisV />
                                 </a>
                             </nav>
                             <input
                                 type="text"
                                 class="form-control"
-                                placeholder="Type your message here..."
+                                placeholder="Widok do wysyłania postów"
                             />
                             <a href="" class="az-msg-send">
-                                <FontAwesomeIcon icon={faPaperPlane} />
+                                <FaRegPaperPlane />
                             </a>
                         </div>
 

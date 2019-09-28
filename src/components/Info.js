@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-
 import { Link, NavLink } from 'react-router-dom';
-
 import Collapse, { Panel } from '../es';
 import { Scrollbars } from 'react-custom-scrollbars';
 
-export default class Info extends React.Component {
+export default class Info extends Component {
     state = {
         accordion: true,
         activeKey: []

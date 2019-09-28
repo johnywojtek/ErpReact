@@ -30,12 +30,19 @@
     }
 }
 
+.arrow-roles {
+    font-size: 40px;
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+}
+
 .add-role {
     height: calc(100vh - 66px);
     width: 100vw;
     padding-top: 20px;
     @include media-breakpoint-up(md) {
-        width: 17vw;
+        width: 38vw;
         border-right: 1px solid $gray-500;
     }
 

@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import {
-    faSearch,
-    faUser,
-    faPowerOff,
-    faEdit,
-    faArrowLeft
-} from '@fortawesome/free-solid-svg-icons';
-import { faComments, faBell } from '@fortawesome/free-regular-svg-icons';
+    FaSearch,
+    FaUser,
+    FaPowerOff,
+    FaEdit,
+    FaArrowLeft,
+    FaRegBell,
+    FaRegComments
+} from 'react-icons/fa';
 
 import classNames from 'classnames';
 
@@ -83,13 +82,13 @@ export default class MainHeader extends Component {
                                 placeholder="Search for anything..."
                             />
                             <button className="btn">
-                                <FontAwesomeIcon icon={faSearch} />
+                                <FaSearch />
                             </button>
                         </div>
                         <div className="az-header-right">
                             <div className="az-header-message">
                                 <Link to="/head/chat">
-                                    <FontAwesomeIcon icon={faComments} />
+                                    <FaRegComments />
                                 </Link>
                             </div>
                             <div
@@ -101,7 +100,7 @@ export default class MainHeader extends Component {
                                 )}
                             >
                                 <a onClick={this.onBellClick} className="new">
-                                    <FontAwesomeIcon icon={faBell} />
+                                    <FaRegBell />
                                 </a>
                                 <div
                                     ref={this.setWrapperRef}
@@ -109,13 +108,12 @@ export default class MainHeader extends Component {
                                 >
                                     <div className="az-dropdown-header d-sm-none">
                                         <a className="az-header-arrow">
-                                            <FontAwesomeIcon
+                                            <FaArrowLeft
                                                 onClick={() =>
                                                     this.setState({
                                                         show: false
                                                     })
                                                 }
-                                                icon={faArrowLeft}
                                             />
                                         </a>
                                     </div>
@@ -135,10 +133,10 @@ export default class MainHeader extends Component {
                                             </div>
                                             <div className="media-body">
                                                 <p>
-                                                    Congratulate{' '}
+                                                    Congratulate
                                                     <strong>
                                                         Socrates Itumay
-                                                    </strong>{' '}
+                                                    </strong>
                                                     for work anniversaries
                                                 </p>
                                                 <span>Mar 15 12:32pm</span>
@@ -153,7 +151,7 @@ export default class MainHeader extends Component {
                                             </div>
                                             <div className="media-body">
                                                 <p>
-                                                    <strong>Joyce Chua</strong>{' '}
+                                                    <strong>Joyce Chua</strong>
                                                     just created a new blog post
                                                 </p>
                                                 <span>Mar 13 04:16am</span>
@@ -170,7 +168,7 @@ export default class MainHeader extends Component {
                                                 <p>
                                                     <strong>
                                                         Althea Cabardo
-                                                    </strong>{' '}
+                                                    </strong>
                                                     just created a new blog post
                                                 </p>
                                                 <span>Mar 13 02:56am</span>
@@ -187,7 +185,7 @@ export default class MainHeader extends Component {
                                                 <p>
                                                     <strong>
                                                         Adrian Monino
-                                                    </strong>{' '}
+                                                    </strong>
                                                     added new comment on your
                                                     photo
                                                 </p>
@@ -223,13 +221,12 @@ export default class MainHeader extends Component {
                                 >
                                     <div className="az-dropdown-header d-sm-none">
                                         <a className="az-header-arrow">
-                                            <FontAwesomeIcon
+                                            <FaArrowLeft
                                                 onClick={() =>
                                                     this.setState({
                                                         showAvatar: false
                                                     })
                                                 }
-                                                icon={faArrowLeft}
                                             />
                                         </a>
                                     </div>
@@ -253,8 +250,7 @@ export default class MainHeader extends Component {
                                             })
                                         }
                                     >
-                                        <FontAwesomeIcon icon={faUser} /> My
-                                        Profile
+                                        <FaUser /> My Profile
                                     </Link>
                                     <Link
                                         to="/main/account-settings"
@@ -265,8 +261,7 @@ export default class MainHeader extends Component {
                                             })
                                         }
                                     >
-                                        <FontAwesomeIcon icon={faEdit} /> Edit
-                                        Profile Account
+                                        <FaEdit /> Edit Profile Account
                                     </Link>
 
                                     <Link
@@ -278,7 +273,7 @@ export default class MainHeader extends Component {
                                             })
                                         }
                                     >
-                                        <FontAwesomeIcon icon={faPowerOff} />{' '}
+                                        <FaPowerOff />
                                         Sign Out
                                     </Link>
                                 </div>

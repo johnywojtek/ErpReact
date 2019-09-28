@@ -25,7 +25,6 @@
     padding: 0;
     @include media-breakpoint-up(lg) {
         padding-left: 20px;
-        padding-top: px;
     }
 }
 
@@ -251,7 +250,7 @@
     }
 
     .media-body {
-        margin-left: 15px;
+        // margin-left: 15px;
 
         p {
             font-size: 13px;
@@ -262,23 +261,25 @@
     }
 
     .media-contact-name {
+        width: 90%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         margin-bottom: 2px;
 
         span:first-child {
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-            display: block;
+            // display: block;
             font-size: 14px;
             font-weight: 500;
             color: $gray-900;
+            width: 80%;
         }
 
         span:last-child {
-            display: block;
+            // display: block;
             font-size: 11px;
             color: $gray-500;
         }
@@ -518,28 +519,30 @@
 .az-content-left-invoice {
     padding: 0;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
         position: absolute;
+        display: none;
         width: 40vw;
     }
 
-    @include media-breakpoint-up(lg) {
-        display: block;
+    border-left: 1px solid $gray-400;
 
-        border-left: 1px solid $gray-400;
-    }
     .invoice-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         @include media-breakpoint-up(lg) {
-            justify-content: flex-start;
+            // justify-content: flex-start;
         }
+
         svg {
             font-size: 30px;
             margin-left: 20px;
-            @include media-breakpoint-up(lg) {
-                display: none;
+            display: none;
+
+            @include media-breakpoint-down(lg) {
+                display: block;
             }
         }
     }

@@ -122,7 +122,7 @@ export default class Profile extends Component {
                                                 />
                                             </div>
                                             <div>
-                                                <span>9:48 am</span>{' '}
+                                                <span>9:48 am</span>
                                                 <a href="">
                                                     <i class="icon ion-android-more-horizontal"></i>
                                                 </a>
@@ -164,7 +164,7 @@ export default class Profile extends Component {
                                                 />
                                             </div>
                                             <div>
-                                                <span>9:32 am</span>{' '}
+                                                <span>9:32 am</span>
                                                 <a href="">
                                                     <i class="icon ion-android-more-horizontal"></i>
                                                 </a>
@@ -190,7 +190,7 @@ export default class Profile extends Component {
                                                 <i class="fas fa-ellipsis-h "></i>
                                             </div>
                                             <div>
-                                                <span>11:22 am</span>{' '}
+                                                <span>11:22 am</span>
                                                 <a href="">
                                                     <i class="icon ion-android-more-horizontal"></i>
                                                 </a>
@@ -220,7 +220,7 @@ export default class Profile extends Component {
                                                 <i class="fas fa-ellipsis-h"></i>
                                             </div>
                                             <div>
-                                                <span>9:32 am</span>{' '}
+                                                <span>9:32 am</span>
                                                 <a href="">
                                                     <i class="icon ion-android-more-horizontal"></i>
                                                 </a>
@@ -254,7 +254,7 @@ export default class Profile extends Component {
                                                 <i class="fas fa-ellipsis-h "></i>
                                             </div>
                                             <div>
-                                                <span>9:48 am</span>{' '}
+                                                <span>9:48 am</span>
                                                 <a href="">
                                                     <i class="icon ion-android-more-horizontal"></i>
                                                 </a>
@@ -295,7 +295,7 @@ export default class Profile extends Component {
                                                 <i class="fas fa-ellipsis-h"></i>
                                             </div>
                                             <div>
-                                                <span>10:12 am</span>{' '}
+                                                <span>10:12 am</span>
                                                 <a href="">
                                                     <i class="icon ion-android-more-horizontal"></i>
                                                 </a>
@@ -346,7 +346,7 @@ export default class Profile extends Component {
                                                 />
                                             </div>
                                             <div>
-                                                <span>09:40 am</span>{' '}
+                                                <span>09:40 am</span>
                                                 <a href="">
                                                     <i class="icon ion-android-more-horizontal"></i>
                                                 </a>

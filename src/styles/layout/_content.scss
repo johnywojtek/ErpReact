@@ -2,7 +2,7 @@
 
 .az-content-left-show {
     .az-content-left {
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(lg) {
             // transform: translateX(-70vw);
             width: 70vw;
             height: 100%;

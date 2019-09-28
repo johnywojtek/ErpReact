@@ -1,5 +1,10 @@
 import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
+
+import Chart from './Chart';
+import Contact from './Contact';
+
+import { FaRegClock, FaRegEnvelope, FaMobileAlt } from 'react-icons/fa';
 import {
     TiDevicePhone,
     TiEdit,
@@ -10,10 +15,6 @@ import {
     TiCameraOutline
 } from 'react-icons/ti';
 
-import Chart from './Chart';
-import Contact from './Contact';
-
-import { FaRegClock, FaRegEnvelope, FaMobileAlt } from 'react-icons/fa';
 export default function Participants() {
     return (
         <div class="az-content-body participants az-content-body-show">

@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
+
 import Routing from './Routing';
-// import 'bootstrap/dist/css/bootstrap.css';
+
 import './styles/index.css';
 
+//off in github pages
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Routing />, document.getElementById('root'));

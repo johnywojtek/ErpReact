@@ -143,6 +143,19 @@
     thead {
         border-color: $gray-300;
     }
+    .fc-view-container {
+        @include media-breakpoint-down(lg) {
+            padding: 0 10px;
+        }
+    }
+
+    .fc-body {
+        @include media-breakpoint-down(lg) {
+            padding: 0 25px;
+            border-left: 1px solid #ced4da;
+            border-right: 1px solid #ced4da;
+        }
+    }
 
     .fc-header-toolbar {
         display: flex;
@@ -191,13 +204,10 @@
             .fc-left {
                 display: flex;
                 order: 2;
-                flex: 0 0 50%;
             }
 
             .fc-right {
-                flex: 0 0 50%;
                 display: flex;
-                justify-content: flex-end;
             }
         }
 
@@ -354,16 +364,6 @@
                 th,
                 td {
                     border-color: $gray-400;
-
-                    @include media-breakpoint-down(md) {
-                        &:first-child {
-                            border-left-width: 0;
-                        }
-
-                        &:last-child {
-                            border-right-width: 0;
-                        }
-                    }
                 }
             }
 

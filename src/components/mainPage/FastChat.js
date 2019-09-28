@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import { Scrollbars } from 'react-custom-scrollbars';
-import { IoMdClose, IoIosSettings } from 'react-icons/io';
-import { FaPhone, FaVideo } from 'react-icons/fa';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
+import { Scrollbars } from 'react-custom-scrollbars';
+import classNames from 'classnames';
+
 import {
-    faCamera,
-    faPaperclip,
-    faSmile,
-    faEllipsisV
-} from '@fortawesome/free-solid-svg-icons';
-import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
+    FaPhone,
+    FaVideo,
+    FaCamera,
+    FaPaperclip,
+    FaSmile,
+    FaEllipsisV,
+    FaRegPaperPlane
+} from 'react-icons/fa';
+import { IoMdClose, IoIosSettings } from 'react-icons/io';
 
 export default class FastChat extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { close: false };
-    }
-    close = () => {
+    state = { close: false };
+
+    onCloseClick = () => {
         this.setState({ close: true });
     };
+
     render() {
         return (
             <div
@@ -47,7 +47,7 @@ export default class FastChat extends Component {
                         <a href="" class="nav-link">
                             <IoIosSettings />
                         </a>
-                        <div onClick={this.close} class="nav-link">
+                        <div onClick={this.onCloseClick} class="nav-link">
                             <IoMdClose />
                         </div>
                     </nav>
@@ -245,22 +245,22 @@ export default class FastChat extends Component {
                     <div class="small-chat-footer">
                         <nav class="nav">
                             <a class="nav-link">
-                                <FontAwesomeIcon icon={faCamera} />
+                                <FaCamera />
                             </a>
                             <a class="nav-link">
-                                <FontAwesomeIcon icon={faPaperclip} />
+                                <FaPaperclip />
                             </a>
                             <a class="nav-link">
-                                <FontAwesomeIcon icon={faSmile} />
+                                <FaSmile />
                             </a>
                         </nav>
                         <input
                             type="text"
-                            class="form-control"
+                            class="form-control "
                             placeholder="Aa"
                         />
                         <a href="" class="az-msg-send">
-                            <FontAwesomeIcon icon={faPaperPlane} />
+                            <FaRegPaperPlane />
                         </a>
                     </div>
                 </div>

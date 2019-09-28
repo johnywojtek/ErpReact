@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-//usunąć validacje.
-
 const FormErrors = ({ formErrors }) => (
     <div>
         {Object.keys(formErrors).map((fieldName, i) => {
@@ -138,7 +136,7 @@ export default class AccSettings extends Component {
         return (
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-3 mb-md-0">
                         <div class="text-center">
                             <img
                                 src="//placehold.it/100"

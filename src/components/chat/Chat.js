@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+
 import { Link } from 'react-router-dom';
+import { Scrollbars } from 'react-custom-scrollbars';
 import axios from 'axios';
 import classNames from 'classnames';
-import { Scrollbars } from 'react-custom-scrollbars';
 
 import User from '../User';
 import Loading from '../Loading';
 import ActiveContacts from './ActiveContacts';
 import MyContext from '../../MyContext';
 
+import userGroup from '../../img/user-group.png';
+import 'rc-tooltip/assets/bootstrap_white.css';
 import { IoMdMore, IoIosClose } from 'react-icons/io';
 import {
     FaCamera,
@@ -21,19 +24,14 @@ import {
     FaPhone
 } from 'react-icons/fa';
 
-import userGroup from '../../img/user-group.png';
-import 'rc-tooltip/assets/bootstrap_white.css';
-
 export default class Chat extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            users: [],
-            loading: true,
-            view: 'users',
-            toggleChat: false
-        };
-    }
+    state = {
+        users: [],
+        loading: true,
+        view: 'users',
+        toggleChat: false
+    };
+
     componentDidMount() {
         this.setState({ loading: true, toggleFile: false });
         axios
@@ -70,7 +68,7 @@ export default class Chat extends Component {
                     >
                         <div className="az-content-left az-content-left-chat">
                             <nav className="nav az-nav-line az-nav-line-chat">
-                                <a
+                                <span
                                     className={classNames('nav-link', {
                                         active:
                                             this.state.view === 'users'
@@ -82,8 +80,8 @@ export default class Chat extends Component {
                                     }
                                 >
                                     Recent Chat
-                                </a>
-                                <a
+                                </span>
+                                <span
                                     className={classNames('nav-link ', {
                                         active:
                                             this.state.view === 'users'
@@ -95,7 +93,7 @@ export default class Chat extends Component {
                                     }
                                 >
                                     Groups
-                                </a>
+                                </span>
                             </nav>
                             <ActiveContacts />
                             <Scrollbars style={{ height: '71vh' }}>
@@ -117,7 +115,7 @@ export default class Chat extends Component {
                                                 <div className="media-contact-name">
                                                     <span>
                                                         Wojtek John, Michał
-                                                        Za...
+                                                        Zsadadasdasdadas
                                                     </span>
                                                     <span>2 hours</span>
                                                 </div>
@@ -411,189 +409,7 @@ export default class Chat extends Component {
                                         </div>
                                         <div className="media-body">
                                             <h6>
-                                                <span>Something.pdf</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Something.pdf</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Something.pdf</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Something.pdf</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media selected">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Fun Photos.pdf</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
                                                 <span>Textwebpages.word</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Textwebpages.word</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 27
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Textwebpages.word</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Textwebpages.word</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Textwebpages.word</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Textwebpages.word</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Invoice002300</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Invoice002299</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Invoice002300</span>
-                                                <p>
-                                                    <span>Date:</span> Oct 25
-                                                </p>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="media">
-                                        <div className="media-icon">
-                                            <FaRegFileAlt />
-                                        </div>
-                                        <div className="media-body">
-                                            <h6>
-                                                <span>Invoice002300</span>
                                                 <p>
                                                     <span>Date:</span> Oct 25
                                                 </p>
