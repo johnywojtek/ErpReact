@@ -7,7 +7,7 @@ import {
     Redirect
 } from 'react-router-dom';
 import MyContext from './MyContext';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/sidebar/Sidebar';
 import MainPage from './components/mainPage/MainPage';
 import MainHeader from './components/header/MainHeader';
 import classNames from 'classnames';
@@ -16,12 +16,12 @@ import Email from './components/Email';
 import Signin from './components/Signin';
 import FullWidthHeader from './components/header/FullWidthHeader';
 import Signup from './components/Signup';
-import Notification from './components/Notification';
+import Notifications from './components/notifications';
 import Profile from './components/Profile';
 import Chat from './components/chat/Chat';
 import AccSettings from './components/AccSettings';
 import Calendar from './components/calendar/Calendar';
-import Roles from './components/Roles';
+import Roles from './components/roles';
 import Disks from './components/Disks';
 import Sms from './components/Sms';
 import Info from './components/Info';
@@ -84,7 +84,7 @@ const routes = [
 class RoutingSidebar extends React.Component {
     state = { status: false };
     onSidebarButtonClick = status => {
-        console.log(status);
+        // console.log(status);
 
         this.setState({ status });
     };
@@ -156,7 +156,7 @@ class Headers extends React.Component {
 
                             <Route
                                 path="/head/notification"
-                                component={Notification}
+                                component={Notifications}
                             />
                         </Switch>
                     </div>
@@ -169,7 +169,7 @@ class Headers extends React.Component {
 export default class Routing extends React.Component {
     state = { status: false };
     onSidebarButtonClick = status => {
-        console.log(status);
+        // console.log(status);
 
         this.setState({ status });
     };

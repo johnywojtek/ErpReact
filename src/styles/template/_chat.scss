@@ -261,12 +261,34 @@
     }
 
     .media-contact-name {
-        width: 90%;
+        width: 95%;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 2px;
 
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: space-between;
+            svg:first-child {
+                margin-bottom: 4px;
+            }
+            svg {
+                fill: #a7afbf;
+                font-size: 13px;
+            }
+            svg:hover {
+                fill: #7d8084;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            div {
+                svg:first-child {
+                    margin-bottom: 4px;
+                }
+            }
+        }
         span:first-child {
             overflow: hidden;
             white-space: nowrap;
@@ -275,7 +297,7 @@
             font-size: 14px;
             font-weight: 500;
             color: $gray-900;
-            width: 80%;
+            width: 60%;
         }
 
         span:last-child {
@@ -393,10 +415,11 @@
     padding: 10px 15px;
     background-color: $gray-300;
     font-size: $font-size-sm;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
     @include border-radius(2px);
     display: inline-block;
     img {
+        padding-right: 5px;
         width: 100%;
         height: auto;
     }

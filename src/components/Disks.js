@@ -5,7 +5,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 export default class Disks extends Component {
     render() {
         return (
-            <div className=" disks">
+            <div className="disks">
                 <Scrollbars style={{ height: '100%' }}>
                     <h2>Neuron Fundation</h2>
                     <div class="row row-xs m-0 disks-wrapper">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Loading() {
+export default function Spinner() {
     return (
         <div className="full-spinner">
             <div class="spinner-border" role="status">

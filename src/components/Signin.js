@@ -39,7 +39,7 @@ export default function Signin() {
                         <a href="">Forgot password?</a>
                     </p>
                     <p>
-                        Don't have an account?{' '}
+                        Don't have an account?
                         <Link to="/signup">Create an Account</Link>
                     </p>
                 </div>

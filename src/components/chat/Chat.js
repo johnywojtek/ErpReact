@@ -5,8 +5,8 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import axios from 'axios';
 import classNames from 'classnames';
 
-import User from '../User';
-import Loading from '../Loading';
+import User from '../common/User';
+import Spinner from '../common/Spinner';
 import ActiveContacts from './ActiveContacts';
 import MyContext from '../../MyContext';
 
@@ -99,12 +99,21 @@ export default class Chat extends Component {
                             <Scrollbars style={{ height: '71vh' }}>
                                 <div id="azChatList" className="az-chat-list">
                                     {this.state.loading ? (
-                                        <Loading />
+                                        <Spinner />
                                     ) : this.state.view === 'users' ? (
-                                        <User
-                                            people={this.state.users}
-                                            emial={false}
-                                        />
+                                        this.state.users.map((e, i) => {
+                                            return (
+                                                <User
+                                                    index={i}
+                                                    emial={false}
+                                                    icons={true}
+                                                    img={e.picture.medium}
+                                                    firstName={e.name.first}
+                                                    lastName={e.name.last}
+                                                    date={e.registered.age}
+                                                />
+                                            );
+                                        })
                                     ) : (
                                         <div className="media new">
                                             <div className="az-img-user online">

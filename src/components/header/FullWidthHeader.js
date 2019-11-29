@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../img/neur.jpg';
 import MyContext from '../../MyContext';
+import Notification from './Notification';
 
 import {
     FaSearch,
@@ -132,74 +133,22 @@ export default class FullWidthHeader extends Component {
                                         You have 2 unread notification
                                     </p>
                                     <div className="az-notification-list">
-                                        <div className="media new">
-                                            <div className="az-img-user">
-                                                <img
-                                                    src="https://via.placeholder.com/500x500"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <div className="media-body">
-                                                <p>
-                                                    Congratulate
-                                                    <strong>
-                                                        Socrates Itumay
-                                                    </strong>
-                                                    for work anniversaries
-                                                </p>
-                                                <span>Mar 15 12:32pm</span>
-                                            </div>
-                                        </div>
-                                        <div className="media new">
-                                            <div className="az-img-user online">
-                                                <img
-                                                    src="https://via.placeholder.com/500x500"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <div className="media-body">
-                                                <p>
-                                                    <strong>Joyce Chua</strong>
-                                                    just created a new blog post
-                                                </p>
-                                                <span>Mar 13 04:16am</span>
-                                            </div>
-                                        </div>
-                                        <div className="media">
-                                            <div className="az-img-user">
-                                                <img
-                                                    src="https://via.placeholder.com/500x500"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <div className="media-body">
-                                                <p>
-                                                    <strong>
-                                                        Althea Cabardo
-                                                    </strong>
-                                                    just created a new blog post
-                                                </p>
-                                                <span>Mar 13 02:56am</span>
-                                            </div>
-                                        </div>
-                                        <div className="media">
-                                            <div className="az-img-user">
-                                                <img
-                                                    src="https://via.placeholder.com/500x500"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <div className="media-body">
-                                                <p>
-                                                    <strong>
-                                                        Adrian Monino
-                                                    </strong>
-                                                    added new comment on your
-                                                    photo
-                                                </p>
-                                                <span>Mar 12 10:40pm</span>
-                                            </div>
-                                        </div>
+                                        <Notification
+                                            text="Althea Cabardo just created a new blog postqwqwq"
+                                            data="Mar 13 02:56am"
+                                        />
+                                        <Notification
+                                            text="Althea Cabardo just created a new blog postqwqwq"
+                                            data="Mar 13 02:56am"
+                                        />
+                                        <Notification
+                                            text="Althea Cabardo just created a new blog postqwqwq"
+                                            data="Mar 13 02:56am"
+                                        />
+                                        <Notification
+                                            text="Althea Cabardo just created a new blog postqwqwq"
+                                            data="Mar 13 02:56am"
+                                        />
                                     </div>
                                     <div className="dropdown-footer">
                                         <Link

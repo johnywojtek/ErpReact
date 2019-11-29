@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MyContext from '../MyContext';
+import { FaTrash, FaDotCircle } from 'react-icons/fa';
 
 // az-img-user online = true // green online circle
 // media new=true //red circle
@@ -46,6 +47,10 @@ export default class User extends React.Component {
                                         <div className="media-contact-name">
                                             <span>{`${e.name.first} ${e.name.last}`}</span>
                                             <span>{`${e.registered.age} days`}</span>
+                                            <div className="media-contact-icons">
+                                                <FaTrash />
+                                                <FaDotCircle />
+                                            </div>
                                         </div>
                                         <p>
                                             {this.props.emial ? e.email : null}
